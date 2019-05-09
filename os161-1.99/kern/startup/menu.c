@@ -500,8 +500,9 @@ cmd_enable_db_threads(int n, char **a)
 {
 	(void)n;
 	(void)a;
-	
-	kprintf("Theoretically debuggin messages should be enabled");
+
+	kprintf("Theoretically debuggin messages should be enabled.\n");
+	uint32_t dbflags = DB_THREADS;
 	return 0;
 }
 
