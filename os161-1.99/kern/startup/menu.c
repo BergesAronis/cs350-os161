@@ -498,6 +498,9 @@ static
 int
 cmd_enable_db_threads(int n, char **a)
 {
+	(void)n;
+	(void)a;
+	
 	kprintf("Theoretically debuggin messages should be enabled");
 	return 0;
 }
