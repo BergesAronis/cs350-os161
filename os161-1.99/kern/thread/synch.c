@@ -207,7 +207,7 @@ lock_acquire(struct lock *lock)
           wchan_lock(lock->lk_wchan);
           spinlock_release(&lock->lk_lock);
           wchan_sleep(lock->lk_wchan);
-          spinlock(&lock->lk_lock);
+          spinlock_acquire(&lock->lk_lock);
 
         }
         lock->owner_thread = curthread;
