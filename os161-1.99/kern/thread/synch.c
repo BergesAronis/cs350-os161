@@ -223,7 +223,7 @@ lock_release(struct lock *lock)
         KASSERT(lock_do_i_hold(lock) == false);
         KASSERT(curthread->t_in_interrupt == false);
 
-        spinlock(&lock->lk_lock);
+        spinlock_acquire(&lock->lk_lock);
         lock->owner_thread = NULL;
         wchan_wakeone(lock->lk_wchan);
         spinlock_release(&lock->lk_lock);
