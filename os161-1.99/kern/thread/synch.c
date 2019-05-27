@@ -220,7 +220,7 @@ lock_release(struct lock *lock)
 {
         // Write this
         KASSERT(lock != NULL);
-        KASSERT(!lock_do_i_hold(lock));
+        KASSERT(lock_do_i_hold(lock));
         KASSERT(curthread->t_in_interrupt == false);
 
         spinlock_acquire(&lock->lk_lock);
