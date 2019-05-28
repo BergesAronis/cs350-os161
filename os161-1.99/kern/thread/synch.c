@@ -197,11 +197,11 @@ lock_acquire(struct lock *lock)
         // Write this
         KASSERT(lock != NULL);
         KASSERT(!lock_do_i_hold(lock));
-        KASSERT(lock->owner_thread != curthread);
+        KASSERT(curthread->t_in_interrupt == false);
 
         spinlock_acquire(&lock->lk_lock);
 
-        while(lock_do_i_hold(lock) == true) {
+        while(lock->owner_thread != NULL) {
 
           wchan_lock(lock->lk_wchan);
           spinlock_release(&lock->lk_lock);
