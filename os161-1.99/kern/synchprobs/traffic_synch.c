@@ -28,6 +28,10 @@ static int destinations[4];
 static int in_intersection;
 static int intersection_limit;
 static struct cv control_varibles[4];
+static struct cv *N;
+static struct cv *W;
+static struct cv *S;
+static struct cv *E;
 
 
 /*
@@ -41,6 +45,34 @@ void
 intersection_sync_init(void)
 {
   /* replace this default implementation with your own implementation */
+  intersection_lk = lock_create("intersection_lk");
+  if (intersection_lk == NULL) {
+    panic("could not create intersection lock");
+  }
+
+  N = cv_create("N");
+  W = cv_create("W");
+  S = cv_create("S");
+  E = cv_create("E");
+
+  if (N == NULL) {
+    panic("could not create N control variable");
+  }
+  if (W == NULL) {
+    panic("could not create N control variable");
+  }
+  if (S == NULL) {
+    panic("could not create N control variable");
+  }
+  if (E == NULL) {
+    panic("could not create N control variable");
+  }
+
+  control_varibles[] = {N, W, E, S};
+  origins[] = {0, 0, 0, 0};
+  destinations[] = {0, 0, 0, 0};
+  in_intersection = 0;
+  intersection_limit = 10;
 
   intersectionSem = sem_create("intersectionSem",1);
   if (intersectionSem == NULL) {
@@ -62,6 +94,17 @@ intersection_sync_cleanup(void)
   /* replace this default implementation with your own implementation */
   KASSERT(intersectionSem != NULL);
   sem_destroy(intersectionSem);
+
+  KASSERT(intersection_lk != NULL);
+  lock_destroy(intersection_lk);
+  KASSERT(N != NULL);
+  cv_destroy(N);
+  KASSERT(W != NULL);
+  cv_destroy(W);
+  KASSERT(S != NULL);
+  cv_destroy(S);
+  KASSERT(E != NULL);
+  cv_destroy(E);
 }
 
 
