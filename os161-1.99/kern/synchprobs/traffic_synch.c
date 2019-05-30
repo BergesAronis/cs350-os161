@@ -27,7 +27,7 @@ static int origins[4];
 static int destinations[4];
 static int in_intersection;
 static int intersection_limit;
-static cv control_varibles[4];
+static struct cv control_varibles[4];
 
 
 /*
