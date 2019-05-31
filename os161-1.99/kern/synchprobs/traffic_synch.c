@@ -47,25 +47,21 @@ intersection_sync_init(void)
     panic("could not create intersection lock");
   }
 
-  N = cv_create("N");
-  W = cv_create("W");
-  S = cv_create("S");
-  E = cv_create("E");
 
-  if (N == NULL) {
+  static struct cv control_varibles[4] = {cv_create("N");, cv_create("W"), cv_create("S"), cv_create("E")};
+  if (control_varibles[0] == NULL) {
     panic("could not create N control variable");
   }
-  if (W == NULL) {
+  if (control_varibles[1] == NULL) {
     panic("could not create N control variable");
   }
-  if (S == NULL) {
+  if (control_varibles[2] == NULL) {
     panic("could not create N control variable");
   }
-  if (E == NULL) {
+  if (control_varibles[3] == NULL) {
     panic("could not create N control variable");
   }
-
-  static struct cv control_varibles[4] = {N, W, S, E};
+  
   static int origins[4] = {0, 0, 0, 0};
   static int destinations[4] = {0, 0, 0, 0};
   in_intersection = 0;
