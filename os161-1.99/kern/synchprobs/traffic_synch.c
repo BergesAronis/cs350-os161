@@ -206,6 +206,7 @@ intersection_after_exit(Direction origin, Direction destination)
   origins[origin]--;
   if (in_intersection == 0) {
     int max = 0;
+    int next_origin;
     for (int i = 0; i < 4; i++) {
       if (queued[i] > max) {
         next_origin = i;
