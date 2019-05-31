@@ -25,10 +25,10 @@ static struct semaphore *intersectionSem;
 static struct lock *intersection_lk;
 static int in_intersection;
 static int intersection_limit;
-static struct cv *N;
-static struct cv *W;
-static struct cv *S;
-static struct cv *E;
+static struct cv *N = cv_create("N");
+static struct cv *W = cv_create("W");
+static struct cv *S = cv_create("S");
+static struct cv *E = cv_create("E");
 
 
 /*
@@ -48,19 +48,19 @@ intersection_sync_init(void)
   }
 
 
-  static struct cv control_varibles[4] = {cv_create("N"), cv_create("W"), cv_create("S"), cv_create("E")};
-  if (control_varibles[0] == NULL) {
-    panic("could not create N control variable");
-  }
-  if (control_varibles[1] == NULL) {
-    panic("could not create N control variable");
-  }
-  if (control_varibles[2] == NULL) {
-    panic("could not create N control variable");
-  }
-  if (control_varibles[3] == NULL) {
-    panic("could not create N control variable");
-  }
+  static struct cv control_varibles[4] = {N, W, S, E};
+  // if (control_varibles[0] == NULL) {
+  //   panic("could not create N control variable");
+  // }
+  // if (control_varibles[1] == NULL) {
+  //   panic("could not create N control variable");
+  // }
+  // if (control_varibles[2] == NULL) {
+  //   panic("could not create N control variable");
+  // }
+  // if (control_varibles[3] == NULL) {
+  //   panic("could not create N control variable");
+  // }
 
   static int origins[4] = {0, 0, 0, 0};
   static int destinations[4] = {0, 0, 0, 0};
