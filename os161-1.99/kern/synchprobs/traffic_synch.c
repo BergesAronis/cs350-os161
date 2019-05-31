@@ -33,7 +33,7 @@ static struct cv *E;
 static volatile int origins[4] = {0, 0, 0, 0};
 static volatile int queued[4] = {0, 0, 0, 0};
 static volatile unsigned allowed_direction = 5;
-static volatile int wait_times[4] = {0, 0, 0, 0}
+static volatile int wait_times[4] = {0, 0, 0, 0};
 static volatile int arrived = 0;
 
 /*
