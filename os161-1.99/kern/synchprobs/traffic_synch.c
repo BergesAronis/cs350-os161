@@ -31,6 +31,7 @@ static struct cv *W;
 static struct cv *S;
 static struct cv *E;
 static volatile int origins[4] = {0, 0, 0, 0};
+static volatile int queued[4] = {0, 0, 0, 0};
 
 /*
  * The simulation driver will call this function once before starting
@@ -161,7 +162,9 @@ intersection_before_entry(Direction origin, Direction destination)
 
   if (!safe_to_go) {
     not_safe();
+    queued[origin]++;
     cv_wait(control_varibles[origin], intersection_lk);
+    queued[origin]--;
     back();
   }
   origins[origin]++;
@@ -195,7 +198,13 @@ intersection_after_exit(Direction origin, Direction destination)
   in_intersection--;
   origins[origin]--;
   if (in_intersection == 0) {
-    int next_origin = (origin + 1) % 4;
+    int max = 0;
+    for (int i = 0; i < 4; i++) {
+      if (queued[i] > max) {
+        max = i;
+      }
+    }
+    int next_origin = max;
     cv_broadcast(control_varibles[next_origin], intersection_lk);
   }
 
