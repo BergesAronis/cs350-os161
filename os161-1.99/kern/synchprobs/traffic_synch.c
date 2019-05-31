@@ -25,10 +25,10 @@ static struct semaphore *intersectionSem;
 static struct lock *intersection_lk;
 static int in_intersection;
 static int intersection_limit;
-struct cv *N = cv_create("N");
-static struct cv *W = cv_create("W");
-static struct cv *S = cv_create("S");
-static struct cv *E = cv_create("E");
+struct struct cv *N;
+static struct cv *W;
+static struct cv *S;
+static struct cv *E;
 
 
 /*
@@ -48,7 +48,10 @@ intersection_sync_init(void)
   }
 
 
-  static struct cv control_varibles[4] = {N, W, S, E};
+  static struct cv control_varibles[4];
+  N = cv_create("N");
+
+  control_varibles[0] = N;
   // if (control_varibles[0] == NULL) {
   //   panic("could not create N control variable");
   // }
