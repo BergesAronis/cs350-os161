@@ -227,7 +227,7 @@ intersection_after_exit(Direction origin, Direction destination)
       }
     }
 
-    wait_times[i] = 0;
+    wait_times[next_origin] = 0;
 
     bool reset = true;
     for (int i = 0; i < 4; i++) {
