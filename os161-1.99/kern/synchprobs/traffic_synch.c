@@ -33,6 +33,8 @@ static struct cv *E;
 static volatile int origins[4] = {0, 0, 0, 0};
 static volatile int queued[4] = {0, 0, 0, 0};
 static volatile unsigned allowed_direction = 5;
+static volatile int wait_times[4] = {0, 0, 0, 0}
+static volatile int arrived = 0;
 
 /*
  * The simulation driver will call this function once before starting
@@ -161,7 +163,10 @@ intersection_before_entry(Direction origin, Direction destination)
   // P(intersectionSem);
 
   lock_acquire(intersection_lk);
-
+  arrived++;
+  if (wait_times[origin] == 0) {
+    wait_times[origin] = arrived;
+  }
   if (allowed_direction == 5) {
     allowed_direction = origin;
   }
@@ -214,6 +219,15 @@ intersection_after_exit(Direction origin, Direction destination)
       }
     }
     allowed_direction = next_origin;
+    int min = max;
+    for (int i = 0; i < 4; i++) {
+      if (wait_times[i] != 0 && [i] < min) {
+        next_origin = i;
+        min = wait_times[i];
+      }
+    }
+
+    wait_times[i] = 0;
 
     bool reset = true;
     for (int i = 0; i < 4; i++) {
