@@ -226,6 +226,7 @@ lock_release(struct lock *lock)
         spinlock_acquire(&lock->lk_lock);
         wchan_wakeone(lock->lk_wchan);
         lock->owner_thread = NULL;
+        wchan_wakeone(lock->lk_wchan);
         spinlock_release(&lock->lk_lock);
 }
 
