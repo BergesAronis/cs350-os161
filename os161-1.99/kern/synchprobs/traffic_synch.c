@@ -46,7 +46,7 @@ static bool
 is_safe(Direction origin) {
   if (origin != allowed_direction) {
     return false;
-  } else if (origin == allowed_direction) {
+  } else if (origin == allowed_direction && in_intersection < intersection_limit) {
     return true;
   }
   if (in_intersection == 0) {
