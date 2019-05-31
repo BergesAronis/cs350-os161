@@ -223,7 +223,7 @@ intersection_after_exit(Direction origin, Direction destination)
     if (reset) {
       allowed_direction = 5;
     }
-    cv_broadcast(control_varibles[next_origin], intersection_lk);
+    cv_broadcast(control_varibles[allowed_direction], intersection_lk);
     in_intersection--;
     origins[origin]--;
   }
