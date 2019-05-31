@@ -138,12 +138,12 @@ intersection_sync_cleanup(void)
  */
 
  void
- not_safe() {
+ not_safe(void) {
    print("not safe");
  }
 
 void
-back() {
+back(void) {
   print("im back");
 }
 
