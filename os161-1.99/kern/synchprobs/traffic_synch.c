@@ -161,11 +161,11 @@ intersection_before_entry(Direction origin, Direction destination)
   // P(intersectionSem);
 
   lock_acquire(intersection_lk);
-  bool safe_to_go = is_safe(origin);
 
   if (allowed_direction == 5) {
     allowed_direction = origin;
   }
+  bool safe_to_go = is_safe(origin);
 
   if (!safe_to_go) {
     not_safe();
