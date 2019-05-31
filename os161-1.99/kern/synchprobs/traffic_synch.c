@@ -32,7 +32,7 @@ static struct cv *S;
 static struct cv *E;
 static volatile int origins[4] = {0, 0, 0, 0};
 static volatile int queued[4] = {0, 0, 0, 0};
-static volatile int allowed_direction = 5;
+static volatile unsigned allowed_direction = 5;
 
 /*
  * The simulation driver will call this function once before starting
@@ -210,7 +210,7 @@ intersection_after_exit(Direction origin, Direction destination)
       }
     }
     int next_origin = max;
-    allowed_direction = next_origin
+    allowed_direction = next_origin;
     cv_broadcast(control_varibles[next_origin], intersection_lk);
     in_intersection--;
     origins[origin]--;
