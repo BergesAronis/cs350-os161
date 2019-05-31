@@ -32,7 +32,7 @@ static struct cv *S;
 static struct cv *E;
 // static volatile int origins[4] = {0, 0, 0, 0};
 static volatile int queued[4] = {0, 0, 0, 0};
-static int current_direction = -1;
+static int current_direction = 5;
 
 /*
  * The simulation driver will call this function once before starting
@@ -50,7 +50,7 @@ is_safe(Direction origin) {
   if (in_intersection == 0) {
     return true;
   }
-  if (current_direction == -1) {
+  if (current_direction == 5) {
     return true;
   }
   return false;
