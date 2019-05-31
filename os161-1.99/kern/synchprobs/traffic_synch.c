@@ -194,7 +194,7 @@ void
 intersection_after_exit(Direction origin, Direction destination)
 {
   /* replace this default implementation with your own implementation */
-  // (void)origin;  /* avoid compiler complaint about unused parameter */
+  (void)origin;  /* avoid compiler complaint about unused parameter */
   (void)destination; /* avoid compiler complaint about unused parameter */
   // KASSERT(intersectionSem != NULL);
   // V(intersectionSem);
