@@ -32,7 +32,7 @@ static struct cv *S;
 static struct cv *E;
 // static volatile int origins[4] = {0, 0, 0, 0};
 static volatile int queued[4] = {0, 0, 0, 0};
-static int current_direction = 5;
+static unsigned current_direction = 5;
 
 /*
  * The simulation driver will call this function once before starting
