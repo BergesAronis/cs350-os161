@@ -151,7 +151,7 @@ intersection_before_entry(Direction origin, Direction destination)
   if (!is_safe(origin)) {
     cv_wait(control_varibles[origin], intersection_lk);
   }
-  origins[origins]++;
+  origins[origin]++;
   in_intersection++;
 
   lock_release(intersection_lk);
