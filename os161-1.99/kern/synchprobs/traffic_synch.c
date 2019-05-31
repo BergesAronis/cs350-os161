@@ -43,7 +43,7 @@ static volatile int queued[4] = {0, 0, 0, 0};
 
 static bool
 is_safe(Direction origin) {
-  if (origins[origin] > 0 && in_intersection < intersection_limit) {
+  if (origins[origin] > 0) {
     return true;
   }
   if (in_intersection == 0) {
