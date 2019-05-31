@@ -144,7 +144,7 @@ static void
 
 static void
 back(void) {
-  
+
 }
 
 void
@@ -157,8 +157,9 @@ intersection_before_entry(Direction origin, Direction destination)
   // P(intersectionSem);
 
   lock_acquire(intersection_lk);
+  bool safe_to_go = is_safe(origin);
 
-  if (!is_safe(origin)) {
+  if (!safe_to_go) {
     not_safe();
     cv_wait(control_varibles[origin], intersection_lk);
     back();
