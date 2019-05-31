@@ -65,10 +65,10 @@ intersection_sync_init(void)
   S = cv_create("S");
   E = cv_create("E");
 
-  control_varibles[0] = *N;
-  control_varibles[1] = *W;
-  control_varibles[2] = *S;
-  control_varibles[3] = *E;
+  control_varibles[0] = N;
+  control_varibles[1] = W;
+  control_varibles[2] = S;
+  control_varibles[3] = E;
   if (N == NULL) {
     panic("could not create N control variable");
   }
