@@ -206,7 +206,7 @@ intersection_after_exit(Direction origin, Direction destination)
   origins[origin]--;
   if (in_intersection == 0) {
     int max = 0;
-    int next_origin;
+    int next_origin = 0;
     for (int i = 0; i < 4; i++) {
       if (queued[i] > max) {
         next_origin = i;
@@ -223,8 +223,9 @@ intersection_after_exit(Direction origin, Direction destination)
     }
     if (reset) {
       allowed_direction = 5;
+    } else {
+      cv_broadcast(control_varibles[next_origin], intersection_lk);
     }
-    cv_broadcast(control_varibles[next_origin], intersection_lk);
     in_intersection--;
     origins[origin]--;
   }
