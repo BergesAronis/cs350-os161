@@ -44,10 +44,13 @@ static volatile unsigned allowed_direction = 5;
 
 static bool
 is_safe(Direction origin) {
+  if (origin != allowed_direction) {
+    return false;
+  }
   if (origins[origin] > 0 && in_intersection < intersection_limit) {
     return true;
   }
-  if (in_intersection == 0 && origin == allowed_direction) {
+  if (in_intersection == 0) {
     return true;
   }
   return false;
