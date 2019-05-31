@@ -67,7 +67,7 @@ intersection_sync_init(void)
     panic("could not create N control variable");
   }
 
-  static struct cv control_varibles[4] = {N, W, S, E};
+  static struct cv control_varibles[] = {N, W, S, E};
   origins[] = {0, 0, 0, 0};
   destinations[] = {0, 0, 0, 0};
   in_intersection = 0;
