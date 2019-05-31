@@ -208,10 +208,10 @@ intersection_after_exit(Direction origin, Direction destination)
     int max = 0;
     for (int i = 0; i < 4; i++) {
       if (queued[i] > max) {
-        max = i;
+        next_origin = i;
+        max = queued[i];
       }
     }
-    int next_origin = max;
     allowed_direction = next_origin;
 
     bool reset = true;
