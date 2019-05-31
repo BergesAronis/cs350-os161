@@ -221,7 +221,7 @@ intersection_after_exit(Direction origin, Direction destination)
     allowed_direction = next_origin;
     int min = max;
     for (int i = 0; i < 4; i++) {
-      if (wait_times[i] != 0 && [i] < min) {
+      if (wait_times[i] != 0 && wait_times[i] < min) {
         next_origin = i;
         min = wait_times[i];
       }
