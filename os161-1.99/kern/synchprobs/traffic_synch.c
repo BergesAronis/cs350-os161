@@ -182,7 +182,11 @@ intersection_after_exit(Direction origin, Direction destination)
   in_intersection--;
   origins[origin]--;
   if (in_intersection == 0) {
-    cv_broadcast(control_varibles[origin + 1], intersection_lk);
+    int next_origin = origin + 1;
+    if (next_origin > 3) {
+      next_origin = 0;
+    }
+    cv_broadcast(control_varibles[next_origin], intersection_lk);
   }
 
   lock_release(intersection_lk);
