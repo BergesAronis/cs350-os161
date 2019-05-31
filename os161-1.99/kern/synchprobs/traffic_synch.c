@@ -159,7 +159,7 @@ intersection_before_entry(Direction origin, Direction destination)
   lock_acquire(intersection_lk);
   bool safe_to_go = is_safe(origin);
 
-  while (!safe_to_go) {
+  if (!safe_to_go) {
     not_safe();
     cv_wait(control_varibles[origin], intersection_lk);
     back();
