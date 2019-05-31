@@ -23,14 +23,14 @@
  */
 static struct semaphore *intersectionSem;
 static struct lock *intersection_lk;
-static int in_intersection;
-static int intersection_limit;
+static volatile int in_intersection;
+static volatile int intersection_limit;
 static struct cv *control_varibles[4];
 static struct cv *N;
 static struct cv *W;
 static struct cv *S;
 static struct cv *E;
-static int origins[4] = {0, 0, 0, 0};
+static volatile int origins[4] = {0, 0, 0, 0};
 
 /*
  * The simulation driver will call this function once before starting
