@@ -23,7 +23,6 @@
  */
 static struct semaphore *intersectionSem;
 static struct lock *intersection_lk;
-static int origins[4];
 static int destinations[4];
 static int in_intersection;
 static int intersection_limit;
@@ -69,7 +68,7 @@ intersection_sync_init(void)
   }
 
   control_varibles = {N, W, S, E};
-  origins = {0, 0, 0, 0};
+  static int origins[4] = {0, 0, 0, 0};
   destinations = {0, 0, 0, 0};
   in_intersection = 0;
   intersection_limit = 10;
