@@ -30,7 +30,7 @@ static struct cv *N;
 static struct cv *W;
 static struct cv *S;
 static struct cv *E;
-static volatile int origins[4] = {0, 0, 0, 0};
+// static volatile int origins[4] = {0, 0, 0, 0};
 static volatile int queued[4] = {0, 0, 0, 0};
 static int current_direction = -1;
 
@@ -87,10 +87,10 @@ intersection_sync_init(void)
     panic("could not create N control variable");
   }
 
-  origins[0] = 0;
-  origins[1] = 0;
-  origins[2] = 0;
-  origins[3] = 0;
+  // origins[0] = 0;
+  // origins[1] = 0;
+  // origins[2] = 0;
+  // origins[3] = 0;
 
   in_intersection = 0;
   intersection_limit = 10;
