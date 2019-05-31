@@ -204,7 +204,7 @@ intersection_after_exit(Direction origin, Direction destination)
         max = i;
       }
     }
-    int next_origin = max;
+    Direction next_origin = max;
     cv_broadcast(control_varibles[next_origin], intersection_lk);
   }
 
