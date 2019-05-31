@@ -30,9 +30,9 @@ static struct cv *N;
 static struct cv *W;
 static struct cv *S;
 static struct cv *E;
-// static volatile int origins[4] = {0, 0, 0, 0};
+static volatile int origins[4] = {0, 0, 0, 0};
 static volatile int queued[4] = {0, 0, 0, 0};
-static unsigned current_direction = 5;
+static volatile int allowed_direction = 5;
 
 /*
  * The simulation driver will call this function once before starting
@@ -44,13 +44,10 @@ static unsigned current_direction = 5;
 
 static bool
 is_safe(Direction origin) {
-  if (origin == current_direction) {
+  if (origins[origin] > 0 && in_intersection < intersection_limit) {
     return true;
   }
-  if (in_intersection == 0) {
-    return true;
-  }
-  if (current_direction == 5) {
+  if (in_intersection == 0 && origin == allowed_direction) {
     return true;
   }
   return false;
@@ -87,10 +84,10 @@ intersection_sync_init(void)
     panic("could not create N control variable");
   }
 
-  // origins[0] = 0;
-  // origins[1] = 0;
-  // origins[2] = 0;
-  // origins[3] = 0;
+  origins[0] = 0;
+  origins[1] = 0;
+  origins[2] = 0;
+  origins[3] = 0;
 
   in_intersection = 0;
   intersection_limit = 10;
@@ -164,6 +161,10 @@ intersection_before_entry(Direction origin, Direction destination)
   lock_acquire(intersection_lk);
   bool safe_to_go = is_safe(origin);
 
+  if (allowed_direction == 5) {
+    allowed_direction = origin;
+  }
+
   if (!safe_to_go) {
     not_safe();
     queued[origin]++;
@@ -171,8 +172,7 @@ intersection_before_entry(Direction origin, Direction destination)
     queued[origin]--;
     back();
   }
-  // origins[origin]++;
-  current_direction = origin;
+  origins[origin]++;
   in_intersection++;
 
   lock_release(intersection_lk);
@@ -194,14 +194,14 @@ void
 intersection_after_exit(Direction origin, Direction destination)
 {
   /* replace this default implementation with your own implementation */
-  (void)origin;  /* avoid compiler complaint about unused parameter */
+  // (void)origin;  /* avoid compiler complaint about unused parameter */
   (void)destination; /* avoid compiler complaint about unused parameter */
   // KASSERT(intersectionSem != NULL);
   // V(intersectionSem);
   lock_acquire(intersection_lk);
 
   in_intersection--;
-  // origins[origin]--;
+  origins[origin]--;
   if (in_intersection == 0) {
     int max = 0;
     for (int i = 0; i < 4; i++) {
@@ -209,8 +209,11 @@ intersection_after_exit(Direction origin, Direction destination)
         max = i;
       }
     }
-    Direction next_origin = max;
+    int next_origin = max;
+    allowed_direction = next_origin
     cv_broadcast(control_varibles[next_origin], intersection_lk);
+    in_intersection--;
+    origins[origin]--;
   }
 
   lock_release(intersection_lk);
