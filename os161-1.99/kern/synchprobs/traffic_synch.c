@@ -50,20 +50,26 @@ intersection_sync_init(void)
 
   static struct cv control_varibles[4];
   N = cv_create("N");
+  W = cv_create("W");
+  S = cv_create("S");
+  E = cv_create("E");
 
   control_varibles[0] = *N;
-  // if (control_varibles[0] == NULL) {
-  //   panic("could not create N control variable");
-  // }
-  // if (control_varibles[1] == NULL) {
-  //   panic("could not create N control variable");
-  // }
-  // if (control_varibles[2] == NULL) {
-  //   panic("could not create N control variable");
-  // }
-  // if (control_varibles[3] == NULL) {
-  //   panic("could not create N control variable");
-  // }
+  control_varibles[1] = *W;
+  control_varibles[2] = *S;
+  control_varibles[3] = *E;
+  if (control_varibles[0] == NULL) {
+    panic("could not create N control variable");
+  }
+  if (control_varibles[1] == NULL) {
+    panic("could not create N control variable");
+  }
+  if (control_varibles[2] == NULL) {
+    panic("could not create N control variable");
+  }
+  if (control_varibles[3] == NULL) {
+    panic("could not create N control variable");
+  }
 
   static int origins[4] = {0, 0, 0, 0};
   static int destinations[4] = {0, 0, 0, 0};
