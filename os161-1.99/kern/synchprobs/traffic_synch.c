@@ -38,6 +38,21 @@ static struct cv *E;
  * You can use it to initialize synchronization and other variables.
  *
  */
+
+bool
+is_safe(Direction origin) {
+  if (in_intersection == intersection_limit) {
+    return false;
+  }
+  if (origins[origin] > 0) {
+    return true;
+  }
+  if (in_intersection == 0) {
+    return true;
+  }
+
+}
+
 void
 intersection_sync_init(void)
 {
@@ -127,10 +142,20 @@ void
 intersection_before_entry(Direction origin, Direction destination)
 {
   /* replace this default implementation with your own implementation */
-  (void)origin;  /* avoid compiler complaint about unused parameter */
+  // (void)origin;  /* avoid compiler complaint about unused parameter */
   (void)destination; /* avoid compiler complaint about unused parameter */
-  KASSERT(intersectionSem != NULL);
-  P(intersectionSem);
+  // KASSERT(intersectionSem != NULL);
+  // P(intersectionSem);
+
+  lock_acquire(intersection_lk);
+
+  if (!is_safe(origin)) {
+    cv_wait(control_varibles[origin]);
+  }
+  origins[origins]++;
+  in_intersection++;
+
+  lock_release(intersection_lk);
 }
 
 
@@ -149,8 +174,18 @@ void
 intersection_after_exit(Direction origin, Direction destination)
 {
   /* replace this default implementation with your own implementation */
-  (void)origin;  /* avoid compiler complaint about unused parameter */
+  // (void)origin;  /* avoid compiler complaint about unused parameter */
   (void)destination; /* avoid compiler complaint about unused parameter */
-  KASSERT(intersectionSem != NULL);
-  V(intersectionSem);
+  // KASSERT(intersectionSem != NULL);
+  // V(intersectionSem);
+  lock_acquire(intersection_lk);
+
+  in_intersection--;
+  origins[origin]--;
+  if (in_intersection == 0) {
+    cv_broadcast(control_varibles[origin + 1]);
+  }
+
+  lock_release(intersection_lk);
+
 }
