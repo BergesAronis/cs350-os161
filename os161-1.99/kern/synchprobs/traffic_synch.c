@@ -25,7 +25,7 @@ static struct semaphore *intersectionSem;
 static struct lock *intersection_lk;
 static int in_intersection;
 static int intersection_limit;
-struct struct cv *N;
+static struct cv *N;
 static struct cv *W;
 static struct cv *S;
 static struct cv *E;
