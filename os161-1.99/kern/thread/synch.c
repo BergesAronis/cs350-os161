@@ -186,8 +186,8 @@ lock_destroy(struct lock *lock)
 
         // add stuff here as needed
         spinlock_cleanup(&lock->lk_lock);
-        kfree(lock->lk_name);
         wchan_destroy(lock->lk_wchan);
+        kfree(lock->lk_name);
         kfree(lock);
 }
 
@@ -224,7 +224,6 @@ lock_release(struct lock *lock)
         KASSERT(curthread->t_in_interrupt == false);
 
         spinlock_acquire(&lock->lk_lock);
-        wchan_wakeone(lock->lk_wchan);
         lock->owner_thread = NULL;
         wchan_wakeone(lock->lk_wchan);
         spinlock_release(&lock->lk_lock);
@@ -263,6 +262,7 @@ cv_create(const char *name)
         if (cv->cv_chan == NULL) {
           kfree(cv->cv_name);
           kfree(cv);
+          return NULL;
         }
 
         return cv;
