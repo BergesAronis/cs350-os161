@@ -58,16 +58,16 @@ intersection_sync_init(void)
   control_varibles[1] = *W;
   control_varibles[2] = *S;
   control_varibles[3] = *E;
-  if (control_varibles[0] == NULL) {
+  if (N == NULL) {
     panic("could not create N control variable");
   }
-  if (control_varibles[1] == NULL) {
+  if (W == NULL) {
     panic("could not create N control variable");
   }
-  if (control_varibles[2] == NULL) {
+  if (S == NULL) {
     panic("could not create N control variable");
   }
-  if (control_varibles[3] == NULL) {
+  if (E == NULL) {
     panic("could not create N control variable");
   }
 
