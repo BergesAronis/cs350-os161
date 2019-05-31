@@ -25,13 +25,12 @@ static struct semaphore *intersectionSem;
 static struct lock *intersection_lk;
 static int in_intersection;
 static int intersection_limit;
+static struct cv *control_varibles[4];
 static struct cv *N;
 static struct cv *W;
 static struct cv *S;
 static struct cv *E;
 static int origins[4] = {0, 0, 0, 0};
-static int destinations[4] = {0, 0, 0, 0};
-
 
 /*
  * The simulation driver will call this function once before starting
@@ -41,7 +40,7 @@ static int destinations[4] = {0, 0, 0, 0};
  *
  */
 
-bool
+static bool
 is_safe(Direction origin) {
   if (origins[origin] > 0 && in_intersection <intersection_limit) {
     return true;
@@ -61,8 +60,6 @@ intersection_sync_init(void)
     panic("could not create intersection lock");
   }
 
-
-  static struct cv control_varibles[4];
   N = cv_create("N");
   W = cv_create("W");
   S = cv_create("S");
@@ -84,6 +81,11 @@ intersection_sync_init(void)
   if (E == NULL) {
     panic("could not create N control variable");
   }
+
+  origins[0] = 0;
+  origins[1] = 0;
+  origins[2] = 0;
+  origins[3] = 0;
 
   in_intersection = 0;
   intersection_limit = 10;
