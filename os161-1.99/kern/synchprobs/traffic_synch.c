@@ -42,7 +42,7 @@ static int origins[4] = {0, 0, 0, 0};
 
 static bool
 is_safe(Direction origin) {
-  if (origins[origin] > 0 && in_intersection <intersection_limit) {
+  if (origins[origin] > 0 && in_intersection < intersection_limit) {
     return true;
   }
   if (in_intersection == 0) {
@@ -137,6 +137,16 @@ intersection_sync_cleanup(void)
  * return value: none
  */
 
+ void
+ not_safe() {
+   print("not safe");
+ }
+
+void
+back() {
+  print("im back");
+}
+
 void
 intersection_before_entry(Direction origin, Direction destination)
 {
@@ -149,7 +159,9 @@ intersection_before_entry(Direction origin, Direction destination)
   lock_acquire(intersection_lk);
 
   if (!is_safe(origin)) {
+    not_safe();
     cv_wait(control_varibles[origin], intersection_lk);
+    back();
   }
   origins[origin]++;
   in_intersection++;
