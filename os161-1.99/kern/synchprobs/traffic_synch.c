@@ -226,8 +226,6 @@ intersection_after_exit(Direction origin, Direction destination)
     } else {
       cv_broadcast(control_varibles[next_origin], intersection_lk);
     }
-    in_intersection--;
-    origins[origin]--;
   }
 
   lock_release(intersection_lk);
