@@ -139,12 +139,12 @@ intersection_sync_cleanup(void)
 
 static void
  not_safe(void) {
-   panic("not safe");
+
  }
 
 static void
 back(void) {
-  panic("im back");
+  
 }
 
 void
