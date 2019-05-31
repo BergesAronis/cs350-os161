@@ -214,6 +214,15 @@ intersection_after_exit(Direction origin, Direction destination)
     }
     int next_origin = max;
     allowed_direction = next_origin;
+    bool reset = true;
+    for (int i = 0; i < 4; i++) {
+      if (queued[i] > 0) {
+        reset = false;
+      }
+    }
+    if (reset) {
+      allowed_direction = 5;
+    }
     cv_broadcast(control_varibles[next_origin], intersection_lk);
     in_intersection--;
     origins[origin]--;
