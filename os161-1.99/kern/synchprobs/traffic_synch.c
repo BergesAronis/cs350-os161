@@ -51,7 +51,7 @@ intersection_sync_init(void)
   static struct cv control_varibles[4];
   N = cv_create("N");
 
-  control_varibles[0] = N;
+  control_varibles[0] = *N;
   // if (control_varibles[0] == NULL) {
   //   panic("could not create N control variable");
   // }
