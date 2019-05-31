@@ -44,7 +44,7 @@ static int current_direction = -1;
 
 static bool
 is_safe(Direction origin) {
-  if (origins[origin] > 0) {
+  if (origin == current_direction) {
     return true;
   }
   if (in_intersection == 0) {
