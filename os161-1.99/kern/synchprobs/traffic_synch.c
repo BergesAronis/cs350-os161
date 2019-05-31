@@ -46,8 +46,7 @@ static bool
 is_safe(Direction origin) {
   if (origin != allowed_direction) {
     return false;
-  }
-  if (origins[origin] > 0 && in_intersection < intersection_limit) {
+  } else if (origin == allowed_direction) {
     return true;
   }
   if (in_intersection == 0) {
@@ -214,6 +213,7 @@ intersection_after_exit(Direction origin, Direction destination)
     }
     int next_origin = max;
     allowed_direction = next_origin;
+
     bool reset = true;
     for (int i = 0; i < 4; i++) {
       if (queued[i] > 0) {
