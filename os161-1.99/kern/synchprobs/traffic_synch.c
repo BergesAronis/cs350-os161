@@ -29,6 +29,8 @@ static struct cv *N;
 static struct cv *W;
 static struct cv *S;
 static struct cv *E;
+static int origins[4] = {0, 0, 0, 0};
+static int destinations[4] = {0, 0, 0, 0};
 
 
 /*
@@ -41,16 +43,13 @@ static struct cv *E;
 
 bool
 is_safe(Direction origin) {
-  if (in_intersection == intersection_limit) {
-    return false;
-  }
-  if (origins[origin] > 0) {
+  if (origins[origin] > 0 && in_intersection <intersection_limit) {
     return true;
   }
   if (in_intersection == 0) {
     return true;
   }
-
+  return false;
 }
 
 void
@@ -86,8 +85,6 @@ intersection_sync_init(void)
     panic("could not create N control variable");
   }
 
-  static int origins[4] = {0, 0, 0, 0};
-  static int destinations[4] = {0, 0, 0, 0};
   in_intersection = 0;
   intersection_limit = 10;
 
@@ -150,7 +147,7 @@ intersection_before_entry(Direction origin, Direction destination)
   lock_acquire(intersection_lk);
 
   if (!is_safe(origin)) {
-    cv_wait(control_varibles[origin]);
+    cv_wait(control_varibles[origin], intersection_lk);
   }
   origins[origins]++;
   in_intersection++;
@@ -183,7 +180,7 @@ intersection_after_exit(Direction origin, Direction destination)
   in_intersection--;
   origins[origin]--;
   if (in_intersection == 0) {
-    cv_broadcast(control_varibles[origin + 1]);
+    cv_broadcast(control_varibles[origin + 1], intersection_lk);
   }
 
   lock_release(intersection_lk);
