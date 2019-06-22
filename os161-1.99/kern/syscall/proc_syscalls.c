@@ -94,7 +94,7 @@ sys_waitpid(pid_t pid,
 }
 
 int
-sys_fork(void) {
+sys_fork(struct trapframe *tf, pid_t *ret) {
   KASSERT(curproc->pid > 0);
   struct proc *child = proc_create_runprogram(curproc->p_name);
   KASSERT(child != NULL);
@@ -107,6 +107,9 @@ sys_fork(void) {
 
   curproc_setas(child->p_addrspace);
 
+  thread_fork(child->p_name, child, (void *)&enter_forked_process, (void *)tf, 10);
+
+  *ret = child->pid;
 
   return 0;
 
