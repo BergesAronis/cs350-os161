@@ -11,7 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="86ab5008-c651-451d-84bd-84637bb56b5c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/os161-1.99/kern/proc/proc.c" beforeDir="false" afterPath="$PROJECT_DIR$/os161-1.99/kern/proc/proc.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/os161-1.99/kern/include/proc.h" beforeDir="false" afterPath="$PROJECT_DIR$/os161-1.99/kern/include/proc.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/os161-1.99/kern/include/syscall.h" beforeDir="false" afterPath="$PROJECT_DIR$/os161-1.99/kern/include/syscall.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="19" />
+              <caret line="11" column="17" selection-start-line="11" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -36,17 +37,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/os161-1.99/kern/include/syscall.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
-              <caret line="63" column="30" lean-forward="true" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
+            <state relative-caret-position="85">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
+              <folding>
+                <element signature="e#2233#2456#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/os161-1.99/kern/proc/proc.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="52" column="19" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
+            <state relative-caret-position="2176">
+              <caret line="189" selection-start-line="189" selection-end-line="189" />
               <folding>
                 <element signature="e#6272#6610#0" expanded="true" />
               </folding>
@@ -54,14 +58,33 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/os161-1.99/kern/include/proc.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="62" column="17" lean-forward="true" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
+            <state relative-caret-position="187">
+              <caret line="41" selection-start-line="41" selection-end-line="41" />
               <folding>
+                <element signature="e#1815#1832#0" expanded="true" />
                 <element signature="e#2202#2585#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/os161-1.99/user/include/unistd.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="398">
+              <caret line="166" column="23" lean-forward="true" selection-start-line="166" selection-start-column="23" selection-end-line="167" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/runprogram.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="63" column="17" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -71,6 +94,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>proc_create</find>
+      <find>fork()</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -79,10 +103,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/os161-1.99/kern/include/proc.h" />
-        <option value="$PROJECT_DIR$/os161-1.99/kern/include/syscall.h" />
         <option value="$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c" />
         <option value="$PROJECT_DIR$/os161-1.99/kern/proc/proc.c" />
+        <option value="$PROJECT_DIR$/os161-1.99/kern/include/syscall.h" />
+        <option value="$PROJECT_DIR$/os161-1.99/kern/include/proc.h" />
       </list>
     </option>
   </component>
@@ -127,13 +151,6 @@
               <item name="os161-1.99" type="462c0819:PsiDirectoryNode" />
               <item name="kern" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="cs350-os161" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cs350-os161" type="462c0819:PsiDirectoryNode" />
-              <item name="os161-1.99" type="462c0819:PsiDirectoryNode" />
-              <item name="kern" type="462c0819:PsiDirectoryNode" />
-              <item name="syscall" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -168,7 +185,7 @@
       <option name="presentableId" value="Default" />
       <updated>1561223665334</updated>
       <workItem from="1561223668338" duration="1479000" />
-      <workItem from="1561228228249" duration="4484000" />
+      <workItem from="1561228228249" duration="7091000" />
     </task>
     <task id="LOCAL-00001" summary="sd">
       <created>1561231818446</created>
@@ -198,11 +215,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561233296658</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="lm">
+      <created>1561234652947</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1561234652947</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5963000" />
+    <option name="totallyTimeSpent" value="8570000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -254,48 +278,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/include/proc.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="62" column="17" lean-forward="true" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
-          <folding>
-            <element signature="e#2202#2585#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/os161-1.99/kern/test/threadtest.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2067" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/root/uw-testbin/onefork">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/runprogram.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="673">
-          <caret line="56" column="25" lean-forward="true" selection-start-line="56" selection-start-column="25" selection-end-line="56" selection-end-column="25" />
+        <state relative-caret-position="240">
+          <caret line="63" column="17" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/include/syscall.h">
+    <entry file="file://$PROJECT_DIR$/os161-1.99/user/include/unistd.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="63" column="30" lean-forward="true" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
+        <state relative-caret-position="398">
+          <caret line="166" column="23" lean-forward="true" selection-start-line="166" selection-start-column="23" selection-end-line="167" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/root/man/syscall/waitpid.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="55" column="49" selection-start-line="55" selection-start-column="49" selection-end-line="55" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/os161-1.99/user/uw-testbin/onefork/Makefile">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/os161-1.99/user/uw-testbin/onefork/onefork.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="10" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="19" />
+          <caret line="11" column="17" selection-start-line="11" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/include/syscall.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="e#2233#2456#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/os161-1.99/kern/proc/proc.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="52" column="19" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
+        <state relative-caret-position="2176">
+          <caret line="189" selection-start-line="189" selection-end-line="189" />
           <folding>
             <element signature="e#6272#6610#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/include/proc.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+          <folding>
+            <element signature="e#1815#1832#0" expanded="true" />
+            <element signature="e#2202#2585#0" expanded="true" />
           </folding>
         </state>
       </provider>
