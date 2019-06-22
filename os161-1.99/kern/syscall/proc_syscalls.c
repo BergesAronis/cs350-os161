@@ -98,7 +98,7 @@ sys_fork(void) {
   KASSERT(curproc->pid > 0);
   struct proc *child = proc_create_runprogram(curproc->p_name);
   KASSERT(child != NULL);
-  child->parent = curproc;
+  child->parent = &(curproc);
 
   int copy_check = as_copy(curproc->p_addrspace, &child->p_addrspace);
   if (copy_check) {
