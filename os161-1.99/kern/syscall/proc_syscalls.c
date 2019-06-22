@@ -102,9 +102,13 @@ sys_fork() {
 
   int copy_check = as_copy(curproc->p_addrspace, &child->p_addrspace);
   if (copy_check) {
-    return ENOMEN;
+    return copy_check;
   }
 
   curproc_setas(child->p_addrspace);
+
+
+  return 0;
+
 
 }
