@@ -9,9 +9,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86ab5008-c651-451d-84bd-84637bb56b5c" name="Default Changelist" comment="sd">
+    <list default="true" id="86ab5008-c651-451d-84bd-84637bb56b5c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c" beforeDir="false" afterPath="$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/os161-1.99/kern/proc/proc.c" beforeDir="false" afterPath="$PROJECT_DIR$/os161-1.99/kern/proc/proc.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="100" column="30" selection-start-line="100" selection-start-column="30" selection-end-line="100" selection-end-column="30" />
+            <state relative-caret-position="187">
+              <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -36,8 +36,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/os161-1.99/kern/include/syscall.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
+            <state relative-caret-position="1071">
               <caret line="63" column="30" lean-forward="true" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/os161-1.99/kern/proc/proc.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="52" column="19" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
+              <folding>
+                <element signature="e#6272#6610#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -56,6 +68,11 @@
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>proc_create</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -65,6 +82,7 @@
         <option value="$PROJECT_DIR$/os161-1.99/kern/include/proc.h" />
         <option value="$PROJECT_DIR$/os161-1.99/kern/include/syscall.h" />
         <option value="$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c" />
+        <option value="$PROJECT_DIR$/os161-1.99/kern/proc/proc.c" />
       </list>
     </option>
   </component>
@@ -114,13 +132,6 @@
               <item name="cs350-os161" type="462c0819:PsiDirectoryNode" />
               <item name="os161-1.99" type="462c0819:PsiDirectoryNode" />
               <item name="kern" type="462c0819:PsiDirectoryNode" />
-              <item name="include" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cs350-os161" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cs350-os161" type="462c0819:PsiDirectoryNode" />
-              <item name="os161-1.99" type="462c0819:PsiDirectoryNode" />
-              <item name="kern" type="462c0819:PsiDirectoryNode" />
               <item name="syscall" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -157,7 +168,7 @@
       <option name="presentableId" value="Default" />
       <updated>1561223665334</updated>
       <workItem from="1561223668338" duration="1479000" />
-      <workItem from="1561228228249" duration="2097000" />
+      <workItem from="1561228228249" duration="4484000" />
     </task>
     <task id="LOCAL-00001" summary="sd">
       <created>1561231818446</created>
@@ -173,11 +184,25 @@
       <option name="project" value="LOCAL" />
       <updated>1561232055904</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="km">
+      <created>1561232296798</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1561232296798</updated>
+    </task>
+    <task id="LOCAL-00004" summary="lm">
+      <created>1561233296658</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1561233296658</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3576000" />
+    <option name="totallyTimeSpent" value="5963000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -192,7 +217,7 @@
     <frame x="-6" y="-6" width="1513" height="1013" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23367697" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23367697" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -204,7 +229,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3295583" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3295583" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3295583" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3295583" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -217,7 +242,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="sd" />
-    <option name="LAST_COMMIT_MESSAGE" value="sd" />
+    <MESSAGE value="km" />
+    <MESSAGE value="lm" />
+    <option name="LAST_COMMIT_MESSAGE" value="lm" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/submitlog.txt">
@@ -237,17 +264,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/test/threadtest.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2067" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/runprogram.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="673">
+          <caret line="56" column="25" lean-forward="true" selection-start-line="56" selection-start-column="25" selection-end-line="56" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/os161-1.99/kern/include/syscall.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
+        <state relative-caret-position="1071">
           <caret line="63" column="30" lean-forward="true" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="100" column="30" selection-start-line="100" selection-start-column="30" selection-end-line="100" selection-end-column="30" />
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/proc/proc.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="52" column="19" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
+          <folding>
+            <element signature="e#6272#6610#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
