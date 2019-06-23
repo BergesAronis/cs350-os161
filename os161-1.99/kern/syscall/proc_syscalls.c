@@ -95,7 +95,6 @@ sys_waitpid(pid_t pid,
 
 int
 sys_fork(struct trapframe *tf, pid_t *ret) {
-  KASSERT(curproc->pid > 0);
   struct proc *child = proc_create_runprogram(curproc->p_name);
   KASSERT(child != NULL);
   child->parent = curproc->pid;
