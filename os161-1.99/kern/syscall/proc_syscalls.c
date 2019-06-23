@@ -9,7 +9,10 @@
 #include <thread.h>
 #include <addrspace.h>
 #include <copyinout.h>
-    #include "opt-A2.h"
+#include <kern/fcntl.h>
+#include <vfs.h>
+#include <limits.h>
+#include "opt-A2.h"
 
   /* this implementation of sys__exit does not do anything with the exit code */
   /* this needs to be fixed to get exit() and waitpid() working properly */
@@ -101,7 +104,8 @@ sys_fork(struct trapframe *tf, pid_t *ret) {
 
   int copy_check = as_copy(curproc->p_addrspace, &child->p_addrspace);
   if (copy_check) {
-    return copy_check;
+    proc_destroy(child);
+    return ENOMEM;
   }
 
   curproc_setas(child->p_addrspace);
