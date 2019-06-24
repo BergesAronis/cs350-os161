@@ -102,6 +102,8 @@ sys_fork(struct trapframe *tf, pid_t *ret) {
   KASSERT(child != NULL);
   child->parent = curproc->pid;
 
+  int res;
+
   int copy_check = as_copy(curproc->p_addrspace, &child->p_addrspace);
   if (copy_check) {
     proc_destroy(child);
@@ -110,8 +112,11 @@ sys_fork(struct trapframe *tf, pid_t *ret) {
 
   curproc_setas(child->p_addrspace);
 
-  thread_fork(child->p_name, child, (void *)&enter_forked_process, (void *)tf, 10);
-
+  res = thread_fork(curthread->t_name, child, (void *)&enter_forked_process, (void *)tf, 10);
+  if (res) {
+      proc_destroy(child);
+      return ENOMEM;
+  }
   *ret = child->pid;
 
   return 0;
