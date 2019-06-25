@@ -71,7 +71,6 @@ struct semaphore *no_proc_sem;
 #endif  // UW
 
 static volatile pid_t pid_counter;
-static struct lock *pid_lock;
 
 /*
  * Create a proc structure.
