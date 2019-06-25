@@ -99,7 +99,7 @@ sys_waitpid(pid_t pid,
 int
 sys_fork(struct trapframe *tf, pid_t *ret) {
   struct proc *child = proc_create_runprogram(curproc->p_name);
-  strcut trap *tf_temp;
+  struct trap *tf_temp;
   if (child == NULL) {
       return ENOMEM;
   }
