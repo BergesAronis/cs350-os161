@@ -11,8 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="86ab5008-c651-451d-84bd-84637bb56b5c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/os161-1.99/kern/include/proc.h" beforeDir="false" afterPath="$PROJECT_DIR$/os161-1.99/kern/include/proc.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c" beforeDir="false" afterPath="$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/os161-1.99/kern/proc/proc.c" beforeDir="false" afterPath="$PROJECT_DIR$/os161-1.99/kern/proc/proc.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="151">
-              <caret line="109" column="44" selection-start-line="109" selection-start-column="44" selection-end-line="109" selection-end-column="44" />
+              <caret line="109" column="37" selection-start-line="109" selection-start-column="37" selection-end-line="109" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -80,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/os161-1.99/kern/proc/proc.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-816">
-              <caret line="84" column="23" selection-start-line="84" selection-start-column="23" selection-end-line="84" selection-end-column="23" />
+            <state relative-caret-position="306">
+              <caret line="102" column="36" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="36" />
               <folding>
                 <element signature="e#2479#2890#0" expanded="true" />
                 <element signature="e#3350#3371#0" expanded="true" />
@@ -142,9 +141,9 @@
         <option value="$PROJECT_DIR$/os161-1.99/kern/include/syscall.h" />
         <option value="$PROJECT_DIR$/os161-1.99/kern/thread/thread.c" />
         <option value="$PROJECT_DIR$/os161-1.99/kern/arch/mips/syscall/syscall.c" />
-        <option value="$PROJECT_DIR$/os161-1.99/kern/proc/proc.c" />
         <option value="$PROJECT_DIR$/os161-1.99/kern/include/proc.h" />
         <option value="$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c" />
+        <option value="$PROJECT_DIR$/os161-1.99/kern/proc/proc.c" />
       </list>
     </option>
   </component>
@@ -243,7 +242,7 @@
       <option name="presentableId" value="Default" />
       <updated>1561223665334</updated>
       <workItem from="1561223668338" duration="1479000" />
-      <workItem from="1561228228249" duration="31290000" />
+      <workItem from="1561228228249" duration="31433000" />
     </task>
     <task id="LOCAL-00001" summary="sd">
       <created>1561231818446</created>
@@ -476,11 +475,25 @@
       <option name="project" value="LOCAL" />
       <updated>1561502574318</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="k">
+      <created>1561504150627</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1561504150627</updated>
+    </task>
+    <task id="LOCAL-00035" summary="k">
+      <created>1561504187535</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1561504187535</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32769000" />
+    <option name="totallyTimeSpent" value="32912000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -640,18 +653,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/proc/proc.c">
+    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-816">
-          <caret line="84" column="23" selection-start-line="84" selection-start-column="23" selection-end-line="84" selection-end-column="23" />
-          <folding>
-            <element signature="e#2479#2890#0" expanded="true" />
-            <element signature="e#3350#3371#0" expanded="true" />
-            <element signature="e#5615#5916#0" expanded="true" />
-            <element signature="e#6290#6628#0" expanded="true" />
-            <element signature="e#6722#7028#0" expanded="true" />
-            <element signature="e#7236#7478#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="151">
+          <caret line="109" column="37" selection-start-line="109" selection-start-column="37" selection-end-line="109" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -662,10 +667,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
+    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/proc/proc.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="109" column="44" selection-start-line="109" selection-start-column="44" selection-end-line="109" selection-end-column="44" />
+        <state relative-caret-position="306">
+          <caret line="102" column="36" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="36" />
+          <folding>
+            <element signature="e#2479#2890#0" expanded="true" />
+            <element signature="e#3350#3371#0" expanded="true" />
+            <element signature="e#5615#5916#0" expanded="true" />
+            <element signature="e#6290#6628#0" expanded="true" />
+            <element signature="e#6722#7028#0" expanded="true" />
+            <element signature="e#7236#7478#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

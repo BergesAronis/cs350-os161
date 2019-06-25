@@ -100,6 +100,8 @@ proc_create(const char *name)
 	/* VFS fields */
 	proc->p_cwd = NULL;
 
+	proc->children = array_create();
+
 #ifdef UW
 	proc->console = NULL;
 #endif // UW
