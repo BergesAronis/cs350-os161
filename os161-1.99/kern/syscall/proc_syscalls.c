@@ -107,7 +107,7 @@ sys_fork(struct trapframe *tf, pid_t *ret) {
   }
 
   child->parent = curproc->pid;
-  array_add(curproc->children, child. NULL);
+  array_add(curproc->children, child, NULL);
 
   int res;
 
