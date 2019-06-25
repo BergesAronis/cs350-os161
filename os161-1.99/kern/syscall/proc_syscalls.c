@@ -11,7 +11,7 @@
 #include <copyinout.h>
 #include <kern/fcntl.h>
 #include <vfs.h>
-#incldue <machine/trapframe.h>
+#include <machine/trapframe.h>
 #include <limits.h>
 #include "opt-A2.h"
 
