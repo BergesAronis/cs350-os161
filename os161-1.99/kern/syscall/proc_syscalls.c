@@ -11,6 +11,7 @@
 #include <copyinout.h>
 #include <kern/fcntl.h>
 #include <vfs.h>
+#incldue <machine/trapframe.h>
 #include <limits.h>
 #include "opt-A2.h"
 
@@ -129,7 +130,7 @@ sys_fork(struct trapframe *tf, pid_t *ret) {
 
   spinlock_release(&child->p_lock);
 
-  res = thread_fork(curthread->t_name, child, &enter_forked_process, (void *)tf_temp, 0);
+  res = thread_fork(curthread->t_name, child, (void *)&enter_forked_process, (void *)tf_temp, 0);
   if (res) {
       kfree(tf_temp);
       proc_destroy(child);
