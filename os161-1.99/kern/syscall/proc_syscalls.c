@@ -101,6 +101,7 @@ int
 sys_fork(struct trapframe *tf, pid_t *ret) {
   struct proc *child = proc_create_runprogram(curproc->p_name);
   struct trapframe *tf_temp;
+  struct addrspace *as_temp = NULL;
   if (child == NULL) {
       return ENOMEM;
   }
@@ -110,11 +111,12 @@ sys_fork(struct trapframe *tf, pid_t *ret) {
 
   int res;
 
-  int copy_check = as_copy(curproc->p_addrspace, &child->p_addrspace);
+  int copy_check = as_copy(curproc->p_addrspace, &as_temp);
   if (copy_check) {
     proc_destroy(child);
     return ENOMEM;
   }
+
 
   tf_temp = kmalloc(sizeof(struct trapframe));
   if (tf_temp == NULL) {
@@ -127,7 +129,7 @@ sys_fork(struct trapframe *tf, pid_t *ret) {
 
   spinlock_acquire(&child->p_lock);
 
-  curproc_setas(child->p_addrspace);
+  child->p_addrspace = as_temp;
 
   spinlock_release(&child->p_lock);
 
