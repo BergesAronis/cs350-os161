@@ -117,13 +117,14 @@ sys_fork(struct trapframe *tf, pid_t *ret) {
 
   curproc_setas(child->p_addrspace);
 
+  spinlock_release(&child->p_lock);
+
   res = thread_fork(curthread->t_name, child, (void *)&enter_forked_process, (void *)tf, 10);
   if (res) {
       proc_destroy(child);
       return ENOMEM;
   }
   *ret = child->pid;
-  spinlock_release(&child->p_lock);
 
   return 0;
 
