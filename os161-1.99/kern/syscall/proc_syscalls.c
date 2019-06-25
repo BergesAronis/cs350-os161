@@ -116,7 +116,7 @@ sys_fork(struct trapframe *tf, pid_t *ret) {
     return ENOMEM;
   }
 
-  tf_temp = kmalloc(sizeof(struct tf_temp));
+  tf_temp = kmalloc(sizeof(struct trapframe));
   if (tf_temp == NULL) {
       proc_destroy(child);
       return ENOMEM;
