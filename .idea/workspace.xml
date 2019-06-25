@@ -27,8 +27,46 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="631">
-              <caret line="116" column="26" selection-start-line="116" selection-start-column="26" selection-end-line="116" selection-end-column="26" />
+            <state relative-caret-position="360">
+              <caret line="125" column="20" selection-start-line="125" selection-start-column="20" selection-end-line="125" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/os161-1.99/kern/include/synch.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="80" column="38" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/os161-1.99/kern/thread/spinlock.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-561" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/os161-1.99/kern/include/proc.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="54" column="26" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/os161-1.99/kern/proc/proc.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="402">
+              <caret line="221" column="1" lean-forward="true" selection-start-line="221" selection-start-column="1" selection-end-line="221" selection-end-column="1" />
+              <folding>
+                <element signature="e#6290#6628#0" expanded="true" />
+                <element signature="e#6722#7028#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -36,20 +74,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/os161-1.99/kern/arch/mips/syscall/syscall.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="144" lean-forward="true" selection-start-line="144" selection-end-line="144" />
+            <state relative-caret-position="476">
+              <caret line="189" column="29" lean-forward="true" selection-start-line="189" selection-start-column="29" selection-end-line="189" selection-end-column="29" />
               <folding>
                 <element signature="e#4218#4813#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/os161-1.99/kern/thread/thread.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-323">
-              <caret line="110" column="5" lean-forward="true" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -63,6 +92,8 @@
       <find>I don</find>
       <find>proc_create_runpr</find>
       <find>ENOMEM</find>
+      <find>as_ac</find>
+      <find>enter_fo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -92,8 +123,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1490" />
-    <option name="width" value="1522" />
+    <option name="x" value="1478" />
+    <option name="width" value="1534" />
     <option name="height" value="2012" />
   </component>
   <component name="ProjectView">
@@ -125,32 +156,14 @@
               <item name="cs350-os161" type="462c0819:PsiDirectoryNode" />
               <item name="os161-1.99" type="462c0819:PsiDirectoryNode" />
               <item name="kern" type="462c0819:PsiDirectoryNode" />
-              <item name="arch" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cs350-os161" type="b2602c69:ProjectViewProjectNode" />
               <item name="cs350-os161" type="462c0819:PsiDirectoryNode" />
               <item name="os161-1.99" type="462c0819:PsiDirectoryNode" />
               <item name="kern" type="462c0819:PsiDirectoryNode" />
-              <item name="arch" type="462c0819:PsiDirectoryNode" />
-              <item name="mips" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cs350-os161" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cs350-os161" type="462c0819:PsiDirectoryNode" />
-              <item name="os161-1.99" type="462c0819:PsiDirectoryNode" />
-              <item name="kern" type="462c0819:PsiDirectoryNode" />
-              <item name="arch" type="462c0819:PsiDirectoryNode" />
-              <item name="mips" type="462c0819:PsiDirectoryNode" />
-              <item name="syscall" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cs350-os161" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cs350-os161" type="462c0819:PsiDirectoryNode" />
-              <item name="os161-1.99" type="462c0819:PsiDirectoryNode" />
-              <item name="kern" type="462c0819:PsiDirectoryNode" />
-              <item name="arch" type="462c0819:PsiDirectoryNode" />
-              <item name="sys161" type="462c0819:PsiDirectoryNode" />
+              <item name="proc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cs350-os161" type="b2602c69:ProjectViewProjectNode" />
@@ -193,7 +206,7 @@
       <option name="presentableId" value="Default" />
       <updated>1561223665334</updated>
       <workItem from="1561223668338" duration="1479000" />
-      <workItem from="1561228228249" duration="16492000" />
+      <workItem from="1561228228249" duration="19768000" />
     </task>
     <task id="LOCAL-00001" summary="sd">
       <created>1561231818446</created>
@@ -258,11 +271,25 @@
       <option name="project" value="LOCAL" />
       <updated>1561333356666</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="lm">
+      <created>1561334944499</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1561334944499</updated>
+    </task>
+    <task id="LOCAL-00011" summary="lm">
+      <created>1561477057325</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1561477057325</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17971000" />
+    <option name="totallyTimeSpent" value="21247000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -274,10 +301,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="745" y="0" width="761" height="1006" extended-state="0" />
+    <frame x="739" y="0" width="767" height="1006" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.48364154" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.48236954" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -289,7 +316,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3295583" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3295583" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3321918" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3321918" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -346,17 +373,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/include/proc.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="44" column="13" lean-forward="true" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
-          <folding>
-            <element signature="e#1815#1832#0" expanded="true" />
-            <element signature="e#2202#2585#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/os161-1.99/user/include/unistd.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="109">
@@ -381,13 +397,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/arch/mips/syscall/syscall.c">
+    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/arch/mips/vm/dumbvm.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="144" lean-forward="true" selection-start-line="144" selection-end-line="144" />
-          <folding>
-            <element signature="e#4218#4813#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="5236">
+          <caret line="317" column="15" selection-start-line="317" selection-start-column="15" selection-end-line="317" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -398,27 +411,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/include/thread.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1734" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/include/synch.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="80" column="38" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/thread/spinlock.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-561" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/include/proc.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="54" column="26" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/os161-1.99/kern/proc/proc.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
-          <caret line="227" column="20" lean-forward="true" selection-start-line="227" selection-start-column="20" selection-end-line="227" selection-end-column="20" />
+          <caret line="221" column="1" lean-forward="true" selection-start-line="221" selection-start-column="1" selection-end-line="221" selection-end-column="1" />
           <folding>
             <element signature="e#6290#6628#0" expanded="true" />
+            <element signature="e#6722#7028#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/arch/mips/vm/dumbvm.c">
+    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/arch/mips/syscall/syscall.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5236">
-          <caret line="317" column="15" selection-start-line="317" selection-start-column="15" selection-end-line="317" selection-end-column="15" />
+        <state relative-caret-position="476">
+          <caret line="189" column="29" lean-forward="true" selection-start-line="189" selection-start-column="29" selection-end-line="189" selection-end-column="29" />
+          <folding>
+            <element signature="e#4218#4813#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="631">
-          <caret line="116" column="26" selection-start-line="116" selection-start-column="26" selection-end-line="116" selection-end-column="26" />
+        <state relative-caret-position="360">
+          <caret line="125" column="20" selection-start-line="125" selection-start-column="20" selection-end-line="125" selection-end-column="20" />
         </state>
       </provider>
     </entry>
