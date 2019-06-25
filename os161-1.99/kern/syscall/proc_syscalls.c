@@ -101,6 +101,7 @@ sys_fork(struct trapframe *tf, pid_t *ret) {
   struct proc *child = proc_create_runprogram(curproc->p_name);
   KASSERT(child != NULL);
   child->parent = curproc->pid;
+  child->pid = 117;
 
   int res;
 
@@ -110,6 +111,8 @@ sys_fork(struct trapframe *tf, pid_t *ret) {
     return ENOMEM;
   }
 
+  spinlock_acquire(child->p_lock);
+
   curproc_setas(child->p_addrspace);
 
   res = thread_fork(curthread->t_name, child, (void *)&enter_forked_process, (void *)tf, 10);
@@ -118,6 +121,7 @@ sys_fork(struct trapframe *tf, pid_t *ret) {
       return ENOMEM;
   }
   *ret = child->pid;
+  spinlock_release(child->p_lock);
 
   return 0;
 
