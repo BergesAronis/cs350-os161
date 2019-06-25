@@ -123,7 +123,7 @@ sys_fork(struct trapframe *tf, pid_t *ret) {
   }
 
 
-  *tf_temp = *tf;
+  memcpy(tf_temp, tf, sizeof(struct trapframe));
 
   spinlock_acquire(&child->p_lock);
 
