@@ -119,7 +119,7 @@ sys_fork(struct trapframe *tf, pid_t *ret) {
 
   spinlock_release(&child->p_lock);
 
-  res = thread_fork(curthread->t_name, child, (void *)&enter_forked_process, (void *)tf, 10);
+  res = thread_fork(curthread->t_name, child, (void *)&enter_forked_process, tf, 0);
   if (res) {
       proc_destroy(child);
       return ENOMEM;
