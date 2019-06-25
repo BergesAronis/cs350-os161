@@ -107,8 +107,7 @@ sys_fork(struct trapframe *tf, pid_t *ret) {
   }
 
   child->parent = curproc->pid;
-//  // TODO: Dynamically change pid
-//  child->pid = pid_counter;
+  array_add(curproc->children, child. NULL);
 
   int res;
 

@@ -63,6 +63,7 @@ struct proc {
 
 	pid_t pid;
 	pid_t parent;
+	struct array* children;
 
 #ifdef UW
   /* a vnode to refer to the console device */
