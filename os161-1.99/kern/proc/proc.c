@@ -230,7 +230,7 @@ proc_create_runprogram(const char *name)
 		return NULL;
 	}
 
-	proc->p_pid = pid_counter;
+	proc->pid = pid_counter;
 	pid_counter++;
 
 #ifdef UW
