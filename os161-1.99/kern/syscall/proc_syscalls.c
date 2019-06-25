@@ -115,13 +115,13 @@ sys_fork(struct trapframe *tf, pid_t *ret) {
     return ENOMEM;
   }
 
-  tf_temp = kmalloc(sizeof(struct trapframe));
+  tf_temp = kmalloc(sizeof(*tf_temp));
   if (tf_temp == NULL) {
       proc_destroy(child);
       return ENOMEM;
   }
 
-  *tf_temp = *tf;
+  memcpy(tf_temp, tf, sizeof(*tf_temp))
 
   spinlock_acquire(&child->p_lock);
 
@@ -129,7 +129,7 @@ sys_fork(struct trapframe *tf, pid_t *ret) {
 
   spinlock_release(&child->p_lock);
 
-  res = thread_fork(curthread->t_name, child, enter_forked_process, tf_temp, 0);
+  res = thread_fork(curthread->t_name, child, enter_forked_process, (void *)tf_temp, 0);
   if (res) {
       kfree(tf_temp);
       proc_destroy(child);
