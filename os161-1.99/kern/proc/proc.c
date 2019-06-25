@@ -101,11 +101,6 @@ proc_create(const char *name)
 	/* VFS fields */
 	proc->p_cwd = NULL;
 
-	lock_acquire(pid_lock);
-	proc->pid = pid_counter;
-	pid_counter++;
-	lock_release(pid_lock);
-
 #ifdef UW
 	proc->console = NULL;
 #endif // UW
@@ -201,7 +196,6 @@ void
 proc_bootstrap(void)
 {
     pid_counter = 1;
-    pid_lock = lock_create("pid_lock");
   kproc = proc_create("[kernel]");
   if (kproc == NULL) {
     panic("proc_create for kproc failed\n");
@@ -235,6 +229,9 @@ proc_create_runprogram(const char *name)
 	if (proc == NULL) {
 		return NULL;
 	}
+
+	proc->p_pid = pid_counter;
+	pid_counter++;
 
 #ifdef UW
 	/* open the console - this should always succeed */
