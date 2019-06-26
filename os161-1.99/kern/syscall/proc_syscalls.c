@@ -43,7 +43,7 @@ void sys__exit(int exitcode) {
       /* detach this thread from its process */
       /* note: curproc cannot be used after this call */
       proc_remthread(curthread);
-      thread_exit()
+      thread_exit();
   } else {
       DEBUG(DB_SYSCALL,"Syscall: _exit(%d)\n",exitcode);
 
