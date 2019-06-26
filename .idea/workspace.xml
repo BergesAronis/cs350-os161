@@ -41,8 +41,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+            <state relative-caret-position="272">
+              <caret line="46" selection-start-line="46" selection-end-line="66" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -267,21 +267,7 @@
       <option name="presentableId" value="Default" />
       <updated>1561223665334</updated>
       <workItem from="1561223668338" duration="1479000" />
-      <workItem from="1561228228249" duration="60891000" />
-    </task>
-    <task id="LOCAL-00029" summary="k">
-      <created>1561499994502</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1561499994502</updated>
-    </task>
-    <task id="LOCAL-00030" summary="k">
-      <created>1561501974141</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1561501974141</updated>
+      <workItem from="1561228228249" duration="61055000" />
     </task>
     <task id="LOCAL-00031" summary="k">
       <created>1561502434420</created>
@@ -612,11 +598,25 @@
       <option name="project" value="LOCAL" />
       <updated>1561580978124</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="k">
+      <created>1561581185253</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1561581185254</updated>
+    </task>
+    <task id="LOCAL-00079" summary="k">
+      <created>1561581265371</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1561581265371</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62370000" />
+    <option name="totallyTimeSpent" value="62534000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -648,7 +648,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.3298969" />
-      <window_info anchor="right" id="Terminal" order="4" visible="true" weight="0.39793813" />
+      <window_info active="true" anchor="right" id="Terminal" order="4" visible="true" weight="0.39793813" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -835,8 +835,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+        <state relative-caret-position="272">
+          <caret line="46" selection-start-line="46" selection-end-line="66" selection-end-column="18" />
         </state>
       </provider>
     </entry>
