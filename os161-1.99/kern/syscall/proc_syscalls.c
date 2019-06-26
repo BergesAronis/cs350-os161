@@ -25,17 +25,17 @@ void sys__exit(int exitcode) {
   struct proc *p = curproc;
   /* for now, just include this to keep the compiler from complaining about
      an unused variable */
-  if (curproc->parent) {
-      lock_acquire(curproc->parent->lk);
-      for (unsigned int i = 0; i < array_num(curproc->parent->children); ++i) {
-          struct proc *child = array_get(curproc->parent->children, i);
-          if (curproc->pid == child->pid) {
+  if (p->parent) {
+      lock_acquire(p->parent->lk);
+      for (unsigned int i = 0; i < array_num(p->parent->children); ++i) {
+          struct proc *child = array_get(p->parent->children, i);
+          if (p->pid == child->pid) {
               child->exit_code = exitcode;
               break;
           }
       }
-      lock_release(curproc->parent->lk);
-      cv_signal(curproc->terminating, curproc->lk);
+      lock_release(p->parent->lk);
+      cv_signal(p->terminating, p->lk);
   }
 
   DEBUG(DB_SYSCALL,"Syscall: _exit(%d)\n",exitcode);
