@@ -26,9 +26,9 @@ void sys__exit(int exitcode) {
      an unused variable */
   if (curproc->parent->pid != NULL) {
       lock_acquire(curproc->parent->lk);
-      for (unsigned int i = 0; i < array_num(curproc->parent>children); ++i) {
+      for (unsigned int i = 0; i < array_num(curproc->parent->children); ++i) {
           struct proc *child = array_get(curproc->parent->children, i);
-          if (curproc->pid == array_get(curproc->parent->children, i)->pid) {
+          if (curproc->pid == child->pid) {
               child->exit_code = exitcode;
           }
       }
