@@ -31,11 +31,11 @@ void sys__exit(int exitcode) {
           struct proc *child = array_get(p->parent->children, i);
           if (p->pid == child->pid) {
               child->exit_code = exitcode;
+              cv_signal(p->terminating, p->parent->lk);
               break;
           }
       }
       lock_release(p->parent->lk);
-      cv_signal(p->terminating, p->parent->lk);
   }
 
   DEBUG(DB_SYSCALL,"Syscall: _exit(%d)\n",exitcode);
