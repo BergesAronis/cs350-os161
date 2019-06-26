@@ -63,6 +63,9 @@ struct proc {
 
 	pid_t pid;
 	pid_t parent;
+	int exit_code;
+	struct lock *lk;
+	struct cv *terminating;
 	struct array* children;
 
 #ifdef UW

@@ -24,7 +24,16 @@ void sys__exit(int exitcode) {
   struct proc *p = curproc;
   /* for now, just include this to keep the compiler from complaining about
      an unused variable */
-  (void)exitcode;
+  if (curproc->parent != NULL) {
+      lock_acquire(curproc->parent->lk);
+      for (int i = 0; i < array_num(curproc->parent>children); ++i) {
+          if (curproc->pid == array_get(curproc->parent->children, i)->pid) {
+              array_get(curproc->parent->children, i)->exit_code = exitcode;
+          }
+      }
+      lock_release(curproc->parent->lk);
+      cv_signal(curproc->terminating, curproc->lk);
+  }
 
   DEBUG(DB_SYSCALL,"Syscall: _exit(%d)\n",exitcode);
 
@@ -60,7 +69,7 @@ sys_getpid(pid_t *retval)
 {
   /* for now, this is just a stub that always returns a PID of 1 */
   /* you need to fix this to make it work properly */
-  *retval = 1;
+  *retval = curproc->pid;
   return(0);
 }
 
@@ -84,11 +93,36 @@ sys_waitpid(pid_t pid,
      Fix this!
   */
 
+    exitstatus = 0;
+    lock_acquire(curproc->lk);
+    bool isChild = false;
+    for (int i = 0; i < array_num(cuproc->children); ++i) {
+        if (pid == array_get(curproc->children, i)->pid) {
+            isChild = true;
+        }
+    }
+    if (isChild == false) {
+        exitstatus = NULL;
+        spinlock_release(curproc->p_lock);
+        *retval = -1;
+        return ESRCH;
+    }
+
+    for (int i = 0; i < array_num(cuproc->children); ++i) {
+        if (pid == array_get(curproc->children, i)->pid) {
+            while(array_get(curproc->children, i)->exit_code == -1) {
+                cv_wait(array_get(curproc->children, i)->terminating, curproc->lk);
+            }
+            exitstatus - _MKWAIT_EXIT(array_get(curproc->children, i)->exit_code);
+        }
+    }
+
+    lock_release(curproc->lk);
+
   if (options != 0) {
     return(EINVAL);
   }
   /* for now, just pretend the exitstatus is 0 */
-  exitstatus = 0;
   result = copyout((void *)&exitstatus,status,sizeof(int));
   if (result) {
     return(result);
@@ -107,6 +141,7 @@ sys_fork(struct trapframe *tf, pid_t *ret) {
   }
 
   child->parent = curproc->pid;
+  child->exit_code = -1;
   array_add(curproc->children, child, NULL);
 
   int res;
