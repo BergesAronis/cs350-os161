@@ -128,7 +128,6 @@ sys_waitpid(pid_t pid,
         struct proc *child2 = array_get(curproc->children, i);
         lock_acquire(child2->lk);
         if (pid == child2->pid) {
-            if (child2->)
             while(!child2->killed) {
                 lock_release(child2->lk);
                 cv_wait(child2->terminating, curproc->lk);
