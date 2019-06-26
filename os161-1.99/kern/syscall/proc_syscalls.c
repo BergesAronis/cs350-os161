@@ -41,7 +41,7 @@ void sys__exit(int exitcode) {
       }
       lock_release(p->parent->lk);
   } else {
-
+      proc_destroy(p);
   }
 
   DEBUG(DB_SYSCALL,"Syscall: _exit(%d)\n",exitcode);
@@ -64,7 +64,6 @@ void sys__exit(int exitcode) {
 
   /* if this is the last user process in the system, proc_destroy()
      will wake up the kernel menu thread */
-  proc_destroy(p);
 
   thread_exit();
   /* thread_exit() does not return, so we should never get here */
