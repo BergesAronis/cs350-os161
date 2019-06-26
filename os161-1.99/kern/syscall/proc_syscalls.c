@@ -10,6 +10,7 @@
 #include <addrspace.h>
 #include <copyinout.h>
 #include <kern/fcntl.h>
+#include <synch.h>
 #include <vfs.h>
 #include <machine/trapframe.h>
 #include <limits.h>
@@ -97,7 +98,7 @@ sys_waitpid(pid_t pid,
     exitstatus = 0;
     lock_acquire(curproc->lk);
     bool isChild = false;
-    for (unsigned int i = 0; i < array_num(cuproc->children); ++i) {
+    for (unsigned int i = 0; i < array_num(curproc->children); ++i) {
         struct proc *child = array_get(curproc->children, i);
         if (pid == child->pid) {
             isChild = true;
@@ -110,7 +111,7 @@ sys_waitpid(pid_t pid,
         return ESRCH;
     }
 
-    for (unsigned int i = 0; i < array_num(cuproc->children); ++i) {
+    for (unsigned int i = 0; i < array_num(curproc->children); ++i) {
         if (pid == array_get(curproc->children, i)->pid) {
             struct proc *child2 = array_get(curproc->children, i);
             while(child2->exit_code == -1) {
