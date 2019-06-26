@@ -151,8 +151,8 @@ proc_destroy(struct proc *proc)
 	}
 	array_destroy(proc->children);
 	lock_release(proc->lk);
-	lock_destroy(proc->terminating);
-	cv_destroy(proc->lk);
+	lock_destroy(proc->lk);
+	cv_destroy(proc->terminating);
 
 #ifndef UW  // in the UW version, space destruction occurs in sys_exit, not here
 	if (proc->p_addrspace) {
