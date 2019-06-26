@@ -67,6 +67,8 @@ struct proc {
 	struct lock *lk;
 	struct cv *terminating;
 	struct array* children;
+	bool killed;
+
 
 #ifdef UW
   /* a vnode to refer to the console device */

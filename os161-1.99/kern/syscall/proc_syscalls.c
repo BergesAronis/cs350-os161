@@ -29,11 +29,14 @@ void sys__exit(int exitcode) {
       lock_acquire(p->parent->lk);
       for (unsigned int i = 0; i < array_num(p->parent->children); ++i) {
           struct proc *child = array_get(p->parent->children, i);
+          lock_acquire(child->lk)
           if (p->pid == child->pid) {
               child->exit_code = exitcode;
               cv_signal(p->terminating, p->parent->lk);
+              lock_release(child->lk);
               break;
           }
+          lock_release(child->lk);
       }
       lock_release(p->parent->lk);
   }
@@ -100,13 +103,16 @@ sys_waitpid(pid_t pid,
     bool isChild = false;
     for (unsigned int i = 0; i < array_num(curproc->children); ++i) {
         struct proc *child = array_get(curproc->children, i);
+        lock_acquire(child->lk);
         if (pid == child->pid) {
             isChild = true;
             if (child->parent->pid != curproc->pid) {
+                lock_rekease(child->lk);
                 lock_release(curproc->lk);
                 return ECHILD;
             }
         }
+        lock_release(child->lk);
     }
     if (isChild == false) {
         lock_release(curproc->lk);
@@ -117,12 +123,15 @@ sys_waitpid(pid_t pid,
 
     for (unsigned int i = 0; i < array_num(curproc->children); ++i) {
         struct proc *child2 = array_get(curproc->children, i);
+        lock_acquire(child2->lk);
         if (pid == child2->pid) {
             while(child2->exit_code == -1) {
+                lock_release(hild2->lk);
                 cv_wait(child2->terminating, curproc->lk);
             }
             exitstatus = _MKWAIT_EXIT(child2->exit_code);
         }
+        lock_release(child2->lk);
     }
 
     lock_release(curproc->lk);
