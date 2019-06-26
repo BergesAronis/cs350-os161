@@ -40,6 +40,7 @@ void sys__exit(int exitcode) {
           lock_release(child->lk);
       }
       lock_release(p->parent->lk);
+      proc_remthread(curthread);
       thread_exit();
   } else {
 
@@ -59,7 +60,6 @@ void sys__exit(int exitcode) {
 
       /* detach this thread from its process */
       /* note: curproc cannot be used after this call */
-      proc_remthread(curthread);
 
       /* if this is the last user process in the system, proc_destroy()
          will wake up the kernel menu thread */
