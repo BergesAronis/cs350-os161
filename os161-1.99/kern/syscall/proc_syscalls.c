@@ -31,6 +31,7 @@ void sys__exit(int exitcode) {
           struct proc *child = array_get(curproc->parent->children, i);
           if (curproc->pid == child->pid) {
               child->exit_code = exitcode;
+              break;
           }
       }
       lock_release(curproc->parent->lk);
