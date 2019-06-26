@@ -140,7 +140,7 @@ sys_fork(struct trapframe *tf, pid_t *ret) {
       return ENOMEM;
   }
 
-  child->parent = curproc->pid;
+  child->parent = curproc;
   child->exit_code = -1;
   array_add(curproc->children, child, NULL);
 
