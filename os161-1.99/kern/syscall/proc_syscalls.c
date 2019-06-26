@@ -29,7 +29,7 @@ void sys__exit(int exitcode) {
       lock_acquire(p->parent->lk);
       for (unsigned int i = 0; i < array_num(p->parent->children); ++i) {
           struct proc *child = array_get(p->parent->children, i);
-          lock_acquire(child->lk)
+          lock_acquire(child->lk);
           if (p->pid == child->pid) {
               child->exit_code = exitcode;
               cv_signal(p->terminating, p->parent->lk);
