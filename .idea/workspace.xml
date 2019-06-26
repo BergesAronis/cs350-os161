@@ -9,10 +9,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86ab5008-c651-451d-84bd-84637bb56b5c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c" beforeDir="false" afterPath="$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c" afterDir="false" />
-    </list>
+    <list default="true" id="86ab5008-c651-451d-84bd-84637bb56b5c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="71" column="20" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
+            <state relative-caret-position="136">
+              <caret line="41" column="34" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -242,14 +239,7 @@
       <option name="presentableId" value="Default" />
       <updated>1561223665334</updated>
       <workItem from="1561223668338" duration="1479000" />
-      <workItem from="1561228228249" duration="63271000" />
-    </task>
-    <task id="LOCAL-00035" summary="k">
-      <created>1561504187535</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1561504187535</updated>
+      <workItem from="1561228228249" duration="63524000" />
     </task>
     <task id="LOCAL-00036" summary="k">
       <created>1561504295921</created>
@@ -587,11 +577,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561582531642</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="k">
+      <created>1561583567098</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1561583567098</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64750000" />
+    <option name="totallyTimeSpent" value="65003000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -810,8 +807,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="71" column="20" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
+        <state relative-caret-position="136">
+          <caret line="41" column="34" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
         </state>
       </provider>
     </entry>
