@@ -107,7 +107,7 @@ sys_waitpid(pid_t pid,
         if (pid == child->pid) {
             isChild = true;
             if (child->parent->pid != curproc->pid) {
-                lock_rekease(child->lk);
+                lock_release(child->lk);
                 lock_release(curproc->lk);
                 return ECHILD;
             }
