@@ -32,8 +32,8 @@ void sys__exit(int exitcode) {
           lock_acquire(child->lk);
           if (p->pid == child->pid) {
               child->exit_code = exitcode;
-              cv_signal(p->terminating, p->parent->lk);
               lock_release(child->lk);
+              cv_signal(p->terminating, p->parent->lk);
               break;
           }
           lock_release(child->lk);
@@ -126,7 +126,7 @@ sys_waitpid(pid_t pid,
         lock_acquire(child2->lk);
         if (pid == child2->pid) {
             while(child2->exit_code == -1) {
-//                lock_release(child2->lk);
+                lock_release(child2->lk);
                 cv_wait(child2->terminating, curproc->lk);
             }
             exitstatus = _MKWAIT_EXIT(child2->exit_code);
