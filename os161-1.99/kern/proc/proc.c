@@ -145,7 +145,7 @@ proc_destroy(struct proc *proc)
 
 	lock_acquire(proc->lk);
 	for (int i = array_num(proc->children)-1; i>=0; --i) {
-	    struct child *proc = (struct proc *)array_get(proc->children, i);
+	    struct proc *child = array_get(proc->children, i);
 	    child->parent = NULL;
 	    array_remove(proc->children, i);
 	}
