@@ -104,14 +104,14 @@ sys_waitpid(pid_t pid,
         }
     }
     if (isChild == false) {
-        lock_release(curproc->p_lock);
+        lock_release(curproc->lk);
         *retval = -1;
         return ESRCH;
     }
 
     for (unsigned int i = 0; i < array_num(curproc->children); ++i) {
-        if (pid == array_get(curproc->children, i)->pid) {
-            struct proc *child2 = array_get(curproc->children, i);
+        struct proc *child2 = array_get(curproc->children, i);
+        if (pid == child2->pid) {
             while(child2->exit_code == -1) {
                 cv_wait(child2->terminating, curproc->lk);
             }
