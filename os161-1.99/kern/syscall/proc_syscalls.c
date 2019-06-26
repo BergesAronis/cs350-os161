@@ -40,9 +40,6 @@ void sys__exit(int exitcode) {
           lock_release(child->lk);
       }
       lock_release(p->parent->lk);
-      /* detach this thread from its process */
-      /* note: curproc cannot be used after this call */
-      proc_remthread(curthread);
       thread_exit();
   } else {
   }
