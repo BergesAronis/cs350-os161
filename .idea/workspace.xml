@@ -11,7 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="86ab5008-c651-451d-84bd-84637bb56b5c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/os161-1.99/kern/include/proc.h" beforeDir="false" afterPath="$PROJECT_DIR$/os161-1.99/kern/include/proc.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c" beforeDir="false" afterPath="$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,19 +24,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1663">
-              <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+            <state relative-caret-position="-17">
+              <caret line="96" column="2" selection-start-line="96" selection-start-column="2" selection-end-line="96" selection-end-column="2" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/os161-1.99/kern/include/proc.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
+            <state relative-caret-position="261">
               <caret line="64" column="17" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
             </state>
           </provider>
@@ -95,8 +95,8 @@
         <option value="$PROJECT_DIR$/os161-1.99/kern/thread/thread.c" />
         <option value="$PROJECT_DIR$/os161-1.99/kern/arch/mips/syscall/syscall.c" />
         <option value="$PROJECT_DIR$/os161-1.99/kern/proc/proc.c" />
-        <option value="$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c" />
         <option value="$PROJECT_DIR$/os161-1.99/kern/include/proc.h" />
+        <option value="$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c" />
       </list>
     </option>
   </component>
@@ -195,7 +195,7 @@
       <option name="presentableId" value="Default" />
       <updated>1561223665334</updated>
       <workItem from="1561223668338" duration="1479000" />
-      <workItem from="1561228228249" duration="36805000" />
+      <workItem from="1561228228249" duration="37654000" />
     </task>
     <task id="LOCAL-00001" summary="sd">
       <created>1561231818446</created>
@@ -484,11 +484,25 @@
       <option name="project" value="LOCAL" />
       <updated>1561510102624</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="k">
+      <created>1561510204389</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1561510204389</updated>
+    </task>
+    <task id="LOCAL-00043" summary="k">
+      <created>1561510374674</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1561510374674</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38284000" />
+    <option name="totallyTimeSpent" value="39133000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -648,13 +662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1663">
-          <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/os161-1.99/kern/proc/proc.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2113">
@@ -672,8 +679,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/os161-1.99/kern/include/proc.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
+        <state relative-caret-position="261">
           <caret line="64" column="17" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-17">
+          <caret line="96" column="2" selection-start-line="96" selection-start-column="2" selection-end-line="96" selection-end-column="2" />
         </state>
       </provider>
     </entry>

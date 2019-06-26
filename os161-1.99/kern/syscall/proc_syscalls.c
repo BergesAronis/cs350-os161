@@ -95,7 +95,6 @@ sys_waitpid(pid_t pid,
      Fix this!
   */
 
-    exitstatus = 0;
     lock_acquire(curproc->lk);
     bool isChild = false;
     for (unsigned int i = 0; i < array_num(curproc->children); ++i) {
@@ -105,8 +104,7 @@ sys_waitpid(pid_t pid,
         }
     }
     if (isChild == false) {
-        exitstatus = NULL;
-        spinlock_release(curproc->p_lock);
+        lock_release(curproc->p_lock);
         *retval = -1;
         return ESRCH;
     }
