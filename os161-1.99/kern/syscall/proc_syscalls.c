@@ -115,7 +115,7 @@ sys_waitpid(pid_t pid,
             while(child2->exit_code == -1) {
                 cv_wait(child2->terminating, curproc->lk);
             }
-            exitstatus - _MKWAIT_EXIT(child2->exit_code);
+            exitstatus = _MKWAIT_EXIT(child2->exit_code);
         }
     }
 
