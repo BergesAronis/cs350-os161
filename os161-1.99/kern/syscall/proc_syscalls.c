@@ -117,6 +117,8 @@ sys_waitpid(pid_t pid,
                 lock_release(curproc->lk);
                 return ECHILD;
             }
+            lock_release(child->lk);
+            break;
         }
         lock_release(child->lk);
     }

@@ -41,9 +41,16 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="541">
-              <caret line="139" column="18" selection-start-line="139" selection-start-column="18" selection-end-line="139" selection-end-column="18" />
+            <state relative-caret-position="408">
+              <caret line="120" column="18" lean-forward="true" selection-start-line="120" selection-start-column="18" selection-end-line="120" selection-end-column="18" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/os161-1.99/user/uw-testbin/pidcheck/pidcheck.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-161" />
           </provider>
         </entry>
       </file>
@@ -208,6 +215,19 @@
               <item name="kern" type="462c0819:PsiDirectoryNode" />
               <item name="thread" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="cs350-os161" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cs350-os161" type="462c0819:PsiDirectoryNode" />
+              <item name="os161-1.99" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cs350-os161" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cs350-os161" type="462c0819:PsiDirectoryNode" />
+              <item name="os161-1.99" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="uw-testbin" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -242,21 +262,7 @@
       <option name="presentableId" value="Default" />
       <updated>1561223665334</updated>
       <workItem from="1561223668338" duration="1479000" />
-      <workItem from="1561228228249" duration="65910000" />
-    </task>
-    <task id="LOCAL-00045" summary="k">
-      <created>1561511198484</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1561511198484</updated>
-    </task>
-    <task id="LOCAL-00046" summary="k">
-      <created>1561511221882</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1561511221883</updated>
+      <workItem from="1561228228249" duration="66668000" />
     </task>
     <task id="LOCAL-00047" summary="k">
       <created>1561511692872</created>
@@ -587,11 +593,25 @@
       <option name="project" value="LOCAL" />
       <updated>1561586166666</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="k">
+      <created>1561586207261</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1561586207261</updated>
+    </task>
+    <task id="LOCAL-00095" summary="k">
+      <created>1561586854863</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1561586854863</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67389000" />
+    <option name="totallyTimeSpent" value="68147000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -808,10 +828,15 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/os161-1.99/user/uw-testbin/pidcheck/pidcheck.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-161" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="139" column="18" selection-start-line="139" selection-start-column="18" selection-end-line="139" selection-end-column="18" />
+        <state relative-caret-position="408">
+          <caret line="120" column="18" lean-forward="true" selection-start-line="120" selection-start-column="18" selection-end-line="120" selection-end-column="18" />
         </state>
       </provider>
     </entry>
