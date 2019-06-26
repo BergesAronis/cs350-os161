@@ -45,6 +45,8 @@ void sys__exit(int exitcode) {
       proc_remthread(curthread);
       thread_exit();
   } else {
+  }
+
       DEBUG(DB_SYSCALL,"Syscall: _exit(%d)\n",exitcode);
 
       KASSERT(curproc->p_addrspace != NULL);
@@ -68,7 +70,6 @@ void sys__exit(int exitcode) {
       proc_destroy(p);
 
       thread_exit();
-  }
 
   /* thread_exit() does not return, so we should never get here */
   panic("return from thread_exit in sys_exit\n");
