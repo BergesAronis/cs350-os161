@@ -104,7 +104,7 @@ proc_create(const char *name)
 	proc->lk = lock_create("lock");
 	proc->terminating = cv_create("terminating");
 	proc->parent = NULL;
-	proc->pid;
+	proc->pid = 0;
 
 
 #ifdef UW

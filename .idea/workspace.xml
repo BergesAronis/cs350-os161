@@ -84,7 +84,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/os161-1.99/kern/include/proc.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="340">
               <caret line="68" column="27" lean-forward="true" selection-start-line="68" selection-start-column="27" selection-end-line="68" selection-end-column="27" />
             </state>
           </provider>
@@ -93,8 +93,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/os161-1.99/kern/proc/proc.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="150" column="18" selection-start-line="150" selection-start-column="18" selection-end-line="150" selection-end-column="18" />
+            <state relative-caret-position="531">
+              <caret line="106" column="18" selection-start-line="106" selection-start-column="18" selection-end-line="106" selection-end-column="18" />
               <folding>
                 <element signature="e#2479#2890#0" expanded="true" />
                 <element signature="e#3350#3371#0" expanded="true" />
@@ -145,6 +145,7 @@
       <find>array_create</find>
       <find>proc_de</find>
       <find>proc_boo</find>
+      <find>pid</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -243,21 +244,7 @@
       <option name="presentableId" value="Default" />
       <updated>1561223665334</updated>
       <workItem from="1561223668338" duration="1479000" />
-      <workItem from="1561228228249" duration="54750000" />
-    </task>
-    <task id="LOCAL-00015" summary="lm">
-      <created>1561479630453</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1561479630453</updated>
-    </task>
-    <task id="LOCAL-00016" summary="lm">
-      <created>1561479682198</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1561479682198</updated>
+      <workItem from="1561228228249" duration="54968000" />
     </task>
     <task id="LOCAL-00017" summary="lm">
       <created>1561479807372</created>
@@ -588,11 +575,25 @@
       <option name="project" value="LOCAL" />
       <updated>1561567562740</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="k">
+      <created>1561572632242</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1561572632243</updated>
+    </task>
+    <task id="LOCAL-00065" summary="k">
+      <created>1561572769937</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1561572769937</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56229000" />
+    <option name="totallyTimeSpent" value="56447000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -792,15 +793,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/os161-1.99/kern/include/proc.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="340">
           <caret line="68" column="27" lean-forward="true" selection-start-line="68" selection-start-column="27" selection-end-line="68" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/os161-1.99/kern/proc/proc.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="150" column="18" selection-start-line="150" selection-start-column="18" selection-end-line="150" selection-end-column="18" />
+        <state relative-caret-position="531">
+          <caret line="106" column="18" selection-start-line="106" selection-start-column="18" selection-end-line="106" selection-end-column="18" />
           <folding>
             <element signature="e#2479#2890#0" expanded="true" />
             <element signature="e#3350#3371#0" expanded="true" />
