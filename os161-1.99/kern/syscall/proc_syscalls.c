@@ -40,6 +40,7 @@ void sys__exit(int exitcode) {
           lock_release(child->lk);
       }
       lock_release(p->parent->lk);
+      thread_exit();
   } else {
 
       DEBUG(DB_SYSCALL,"Syscall: _exit(%d)\n",exitcode);
