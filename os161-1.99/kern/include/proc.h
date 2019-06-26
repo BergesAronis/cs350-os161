@@ -62,7 +62,7 @@ struct proc {
 	struct vnode *p_cwd;		/* current working directory */
 
 	pid_t pid;
-	pid_t parent;
+	struct proc *parent;
 	int exit_code;
 	struct lock *lk;
 	struct cv *terminating;
