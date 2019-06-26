@@ -32,6 +32,7 @@ void sys__exit(int exitcode) {
           lock_acquire(child->lk);
           if (p->pid == child->pid) {
               child->exit_code = exitcode;
+              child->killed = true;
               lock_release(child->lk);
               cv_signal(p->terminating, p->parent->lk);
               break;
@@ -39,6 +40,8 @@ void sys__exit(int exitcode) {
           lock_release(child->lk);
       }
       lock_release(p->parent->lk);
+  } else {
+
   }
 
   DEBUG(DB_SYSCALL,"Syscall: _exit(%d)\n",exitcode);
@@ -125,7 +128,8 @@ sys_waitpid(pid_t pid,
         struct proc *child2 = array_get(curproc->children, i);
         lock_acquire(child2->lk);
         if (pid == child2->pid) {
-            while(child2->exit_code == -1) {
+            if (child2->)
+            while(!child2->killed) {
                 lock_release(child2->lk);
                 cv_wait(child2->terminating, curproc->lk);
             }
