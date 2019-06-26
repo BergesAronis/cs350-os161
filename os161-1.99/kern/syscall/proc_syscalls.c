@@ -25,7 +25,7 @@ void sys__exit(int exitcode) {
   struct proc *p = curproc;
   /* for now, just include this to keep the compiler from complaining about
      an unused variable */
-  if (curproc->parent->pid != NULL) {
+  if (curproc->parent) {
       lock_acquire(curproc->parent->lk);
       for (unsigned int i = 0; i < array_num(curproc->parent->children); ++i) {
           struct proc *child = array_get(curproc->parent->children, i);
