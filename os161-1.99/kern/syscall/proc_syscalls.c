@@ -36,7 +36,7 @@ void sys__exit(int exitcode) {
           }
       }
       lock_release(p->parent->lk);
-      cv_signal(p->terminating, p->lk);
+      cv_signal(p->terminating, p->parent->lk);
   }
 
   DEBUG(DB_SYSCALL,"Syscall: _exit(%d)\n",exitcode);
