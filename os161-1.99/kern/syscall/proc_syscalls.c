@@ -102,6 +102,10 @@ sys_waitpid(pid_t pid,
         struct proc *child = array_get(curproc->children, i);
         if (pid == child->pid) {
             isChild = true;
+            if (child->parent->pid != curproc->pid) {
+                lock_release(curproc->lk);
+                return ECHILD;
+            }
         }
     }
     if (isChild == false) {
@@ -109,6 +113,7 @@ sys_waitpid(pid_t pid,
         *retval = -1;
         return ESRCH;
     }
+
 
     for (unsigned int i = 0; i < array_num(curproc->children); ++i) {
         struct proc *child2 = array_get(curproc->children, i);
