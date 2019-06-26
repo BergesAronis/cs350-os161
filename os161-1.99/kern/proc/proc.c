@@ -101,6 +101,10 @@ proc_create(const char *name)
 	proc->p_cwd = NULL;
 
 	proc->children = array_create();
+	proc->lk = lock_create("lock");
+	proc->terminating = cv_create("terminating");
+	proc->parent = NULL;
+
 
 #ifdef UW
 	proc->console = NULL;
