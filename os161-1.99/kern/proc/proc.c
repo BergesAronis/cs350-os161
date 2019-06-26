@@ -143,6 +143,16 @@ proc_destroy(struct proc *proc)
 		proc->p_cwd = NULL;
 	}
 
+	lock_acquire(proc->lk);
+	for (int i = array_num(proc->children)-1; i>=0; --i) {
+	    struct child *proc = (struct proc *)array_get(proc->children, i);
+	    child->parent = NULL;
+	    array_remove(proc->children, i);
+	}
+	array_destroy(proc->children);
+	lock_release(proc->lk);
+	lock_destroy(proc->terminating);
+	cv_destroy(proc->lk);
 
 #ifndef UW  // in the UW version, space destruction occurs in sys_exit, not here
 	if (proc->p_addrspace) {
@@ -161,6 +171,7 @@ proc_destroy(struct proc *proc)
 		as_deactivate();
 		as = curproc_setas(NULL);
 		as_destroy(as);
+
 	}
 #endif // UW
 
