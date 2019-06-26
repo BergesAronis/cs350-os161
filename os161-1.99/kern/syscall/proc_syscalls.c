@@ -24,11 +24,12 @@ void sys__exit(int exitcode) {
   struct proc *p = curproc;
   /* for now, just include this to keep the compiler from complaining about
      an unused variable */
-  if (curproc->parent != NULL) {
+  if (curproc->parent->pid != NULL) {
       lock_acquire(curproc->parent->lk);
-      for (int i = 0; i < array_num(curproc->parent>children); ++i) {
+      for (unsigned int i = 0; i < array_num(curproc->parent>children); ++i) {
+          struct proc *child = array_get(curproc->parent->children, i);
           if (curproc->pid == array_get(curproc->parent->children, i)->pid) {
-              array_get(curproc->parent->children, i)->exit_code = exitcode;
+              child->exit_code = exitcode;
           }
       }
       lock_release(curproc->parent->lk);
@@ -96,8 +97,9 @@ sys_waitpid(pid_t pid,
     exitstatus = 0;
     lock_acquire(curproc->lk);
     bool isChild = false;
-    for (int i = 0; i < array_num(cuproc->children); ++i) {
-        if (pid == array_get(curproc->children, i)->pid) {
+    for (unsigned int i = 0; i < array_num(cuproc->children); ++i) {
+        struct proc *child = array_get(curproc->children, i);
+        if (pid == child->pid) {
             isChild = true;
         }
     }
@@ -108,12 +110,13 @@ sys_waitpid(pid_t pid,
         return ESRCH;
     }
 
-    for (int i = 0; i < array_num(cuproc->children); ++i) {
+    for (unsigned int i = 0; i < array_num(cuproc->children); ++i) {
         if (pid == array_get(curproc->children, i)->pid) {
-            while(array_get(curproc->children, i)->exit_code == -1) {
-                cv_wait(array_get(curproc->children, i)->terminating, curproc->lk);
+            struct proc *child2 = array_get(curproc->children, i);
+            while(child2->exit_code == -1) {
+                cv_wait(child2->terminating, curproc->lk);
             }
-            exitstatus - _MKWAIT_EXIT(array_get(curproc->children, i)->exit_code);
+            exitstatus - _MKWAIT_EXIT(child2->exit_code);
         }
     }
 
