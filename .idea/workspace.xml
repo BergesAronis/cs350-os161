@@ -93,8 +93,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/os161-1.99/kern/proc/proc.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="531">
-              <caret line="106" column="18" selection-start-line="106" selection-start-column="18" selection-end-line="106" selection-end-column="18" />
+            <state relative-caret-position="361">
+              <caret line="147" column="54" selection-start-line="147" selection-start-column="54" selection-end-line="147" selection-end-column="54" />
               <folding>
                 <element signature="e#2479#2890#0" expanded="true" />
                 <element signature="e#3350#3371#0" expanded="true" />
@@ -244,21 +244,7 @@
       <option name="presentableId" value="Default" />
       <updated>1561223665334</updated>
       <workItem from="1561223668338" duration="1479000" />
-      <workItem from="1561228228249" duration="54968000" />
-    </task>
-    <task id="LOCAL-00017" summary="lm">
-      <created>1561479807372</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1561479807372</updated>
-    </task>
-    <task id="LOCAL-00018" summary="lm">
-      <created>1561479855342</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1561479855342</updated>
+      <workItem from="1561228228249" duration="55226000" />
     </task>
     <task id="LOCAL-00019" summary="lm">
       <created>1561480073642</created>
@@ -589,11 +575,25 @@
       <option name="project" value="LOCAL" />
       <updated>1561572769937</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="k">
+      <created>1561572851676</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1561572851676</updated>
+    </task>
+    <task id="LOCAL-00067" summary="k">
+      <created>1561572931998</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1561572931998</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56447000" />
+    <option name="totallyTimeSpent" value="56705000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -800,8 +800,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/os161-1.99/kern/proc/proc.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="106" column="18" selection-start-line="106" selection-start-column="18" selection-end-line="106" selection-end-column="18" />
+        <state relative-caret-position="361">
+          <caret line="147" column="54" selection-start-line="147" selection-start-column="54" selection-end-line="147" selection-end-column="54" />
           <folding>
             <element signature="e#2479#2890#0" expanded="true" />
             <element signature="e#3350#3371#0" expanded="true" />
