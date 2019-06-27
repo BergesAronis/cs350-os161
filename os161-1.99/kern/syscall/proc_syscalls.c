@@ -145,7 +145,7 @@ sys_waitpid(pid_t pid,
             exitstatus = _MKWAIT_EXIT(child->exit_code);
             break;
         }
-        lock_release(childsss->lk);
+        lock_release(child->lk);
     }
 
     lock_release(curproc->lk);
