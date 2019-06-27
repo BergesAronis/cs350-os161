@@ -133,6 +133,11 @@ sys_waitpid(pid_t pid,
         struct proc *child2 = array_get(curproc->children, i);
         lock_acquire(child2->lk);
         if (pid == child2->pid) {
+            if (child2->killed) {
+                exitstatus = _MKWAIT_EXIT(child2->exit_code);
+                lock_release(child2->lk);
+                break;
+            }
             while(!child2->killed) {
                 lock_release(child2->lk);
                 cv_wait(child2->terminating, curproc->lk);
