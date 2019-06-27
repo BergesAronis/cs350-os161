@@ -134,10 +134,11 @@ sys_waitpid(pid_t pid,
         lock_acquire(child2->lk);
         if (pid == child2->pid) {
             while(!child2->killed) {
-                lock_release(child2->lk);
+//                lock_release(child2->lk);
                 cv_wait(child2->terminating, curproc->lk);
             }
             exitstatus = _MKWAIT_EXIT(child2->exit_code);
+            lock_release(child2->lk);
             break;
         }
         lock_release(child2->lk);
