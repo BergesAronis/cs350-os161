@@ -11,7 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="86ab5008-c651-451d-84bd-84637bb56b5c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/os161-1.99/kern/proc/proc.c" beforeDir="false" afterPath="$PROJECT_DIR$/os161-1.99/kern/proc/proc.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/sys161.conf" beforeDir="false" afterPath="$PROJECT_DIR$/root/sys161.conf" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,8 +41,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2312">
-              <caret line="169" column="22" lean-forward="true" selection-start-line="169" selection-start-column="22" selection-end-line="169" selection-end-column="22" />
+            <state relative-caret-position="340">
+              <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -95,7 +95,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/os161-1.99/kern/proc/proc.c">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="578">
@@ -104,6 +104,15 @@
                 <element signature="e#2479#2890#0" expanded="true" />
                 <element signature="e#3561#3582#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/root/sys161.conf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="681">
+              <caret line="134" column="30" selection-start-line="134" selection-start-column="30" selection-end-line="134" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -139,6 +148,7 @@
       <find>pid</find>
       <find>proc_boo</find>
       <find>rams</find>
+      <find>busctl</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\pipli\Documents\CS 350\cs350-os161\os161-1.99\user</dir>
@@ -155,8 +165,9 @@
         <option value="$PROJECT_DIR$/os161-1.99/kern/arch/mips/syscall/syscall.c" />
         <option value="$PROJECT_DIR$/os161-1.99/kern/include/proc.h" />
         <option value="$PROJECT_DIR$/os161-1.99/kern/thread/synch.c" />
-        <option value="$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c" />
         <option value="$PROJECT_DIR$/os161-1.99/kern/proc/proc.c" />
+        <option value="$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c" />
+        <option value="$PROJECT_DIR$/root/sys161.conf" />
       </list>
     </option>
   </component>
@@ -194,6 +205,11 @@
               <item name="cs350-os161" type="462c0819:PsiDirectoryNode" />
               <item name="os161-1.99" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="cs350-os161" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cs350-os161" type="462c0819:PsiDirectoryNode" />
+              <item name="root" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -229,21 +245,7 @@
       <updated>1561223665334</updated>
       <workItem from="1561223668338" duration="1479000" />
       <workItem from="1561228228249" duration="67365000" />
-      <workItem from="1561647389664" duration="9248000" />
-    </task>
-    <task id="LOCAL-00057" summary="k">
-      <created>1561518861234</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1561518861234</updated>
-    </task>
-    <task id="LOCAL-00058" summary="k">
-      <created>1561519812089</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1561519812089</updated>
+      <workItem from="1561647389664" duration="9567000" />
     </task>
     <task id="LOCAL-00059" summary="k">
       <created>1561558538331</created>
@@ -574,11 +576,25 @@
       <option name="project" value="LOCAL" />
       <updated>1561653253024</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="k">
+      <created>1561661981832</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1561661981832</updated>
+    </task>
+    <task id="LOCAL-00107" summary="Got a bunch of stuff working">
+      <created>1561662195341</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1561662195341</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78092000" />
+    <option name="totallyTimeSpent" value="78411000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -622,7 +638,8 @@
     <MESSAGE value="First evidence of fork working" />
     <MESSAGE value="lm" />
     <MESSAGE value="k" />
-    <option name="LAST_COMMIT_MESSAGE" value="k" />
+    <MESSAGE value="Got a bunch of stuff working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Got a bunch of stuff working" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/submitlog.txt">
@@ -783,13 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2312">
-          <caret line="169" column="22" lean-forward="true" selection-start-line="169" selection-start-column="22" selection-end-line="169" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/os161-1.99/kern/proc/proc.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -798,6 +808,20 @@
             <element signature="e#2479#2890#0" expanded="true" />
             <element signature="e#3561#3582#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/root/sys161.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="681">
+          <caret line="134" column="30" selection-start-line="134" selection-start-column="30" selection-end-line="134" selection-end-column="30" />
         </state>
       </provider>
     </entry>
