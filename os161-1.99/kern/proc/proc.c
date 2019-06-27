@@ -150,6 +150,10 @@ proc_destroy(struct proc *proc)
 	    struct proc *child = array_get(proc->children, i);
 	    child->parent = NULL;
 	    array_remove(proc->children, i);
+	    if (child->killed) {
+	        as_destroy(child->p_addrspace);
+	        proc_destroy(child);
+	    }
 	}
 	array_destroy(proc->children);
 	lock_release(proc->lk);
