@@ -34,7 +34,7 @@ void sys__exit(int exitcode) {
               child->exit_code = exitcode;
               child->killed = true;
               lock_release(child->lk);
-              cv_broadcast(p->terminating, p->parent->lk);
+              cv_signal(p->terminating, p->parent->lk);
               break;
           }
           lock_release(child->lk);
@@ -130,22 +130,22 @@ sys_waitpid(pid_t pid,
 
 
     for (unsigned int i = 0; i < array_num(curproc->children); ++i) {
-        struct proc *child2 = array_get(curproc->children, i);
-        lock_acquire(child2->lk);
-        if (pid == child2->pid) {
-            if (child2->killed) {
-                exitstatus = _MKWAIT_EXIT(child2->exit_code);
-                lock_release(child2->lk);
+        struct proc *child = array_get(curproc->children, i);
+        lock_acquire(child->lk);
+        if (pid == child->pid) {
+            if (child->killed) {
+                exitstatus = _MKWAIT_EXIT(child->exit_code);
+                lock_release(child->lk);
                 break;
             }
-            while(!child2->killed) {
-                lock_release(child2->lk);
-                cv_wait(child2->terminating, curproc->lk);
+            while(!child->killed) {
+                lock_release(child->lk);
+                cv_wait(child->terminating, curproc->lk);
             }
-            exitstatus = _MKWAIT_EXIT(child2->exit_code);
+            exitstatus = _MKWAIT_EXIT(child->exit_code);
             break;
         }
-        lock_release(child2->lk);
+        lock_release(childsss->lk);
     }
 
     lock_release(curproc->lk);
