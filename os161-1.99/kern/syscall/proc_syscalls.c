@@ -34,7 +34,7 @@ void sys__exit(int exitcode) {
               child->exit_code = exitcode;
               child->killed = true;
               lock_release(child->lk);
-              cv_signal(p->terminating, p->parent->lk);
+              cv_broadcast(p->terminating, p->parent->lk);
               break;
           }
           lock_release(child->lk);
