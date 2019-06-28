@@ -35,19 +35,6 @@ void sys__exit(int exitcode) {
       cv_signal(p->terminating, p->parent->lk);
       lock_release(p->parent->lk);
 
-//      for (unsigned int i = 0; i < array_num(p->parent->children); ++i) {
-//          struct proc *child = array_get(p->parent->children, i);
-//          lock_acquire(child->lk);
-//          if (p->pid == child->pid) {
-//              child->exit_code = exitcode;
-//              child->killed = true;
-//              lock_release(child->lk);
-//              cv_signal(p->terminating, p->parent->lk);
-//              break;
-//          }
-//          lock_release(child->lk);
-//      }
-//      lock_release(p->parent->lk);
       /* detach this thread from its process */
       /* note: curproc cannot be used after this call */
       proc_remthread(curthread);
