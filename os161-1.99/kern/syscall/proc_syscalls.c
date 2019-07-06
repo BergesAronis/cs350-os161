@@ -208,7 +208,7 @@ sys_fork(struct trapframe *tf, pid_t *ret) {
 }
 
 int
-sys_execv(char *progname) {
+sys_execv(char *progname, char **args) {
     struct addrspace *as;
     struct vnode *v;
     vaddr_t entrypoint, stackptr;
