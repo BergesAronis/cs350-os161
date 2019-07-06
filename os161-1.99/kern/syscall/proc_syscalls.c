@@ -215,7 +215,23 @@ sys_execv(char *progname, char **args) {
     int result;
 
     // Count the number of arguments
-    (void)args;
+    int args_many = 0;
+    for (int i = 0; args[i] != NULL; ++i) {
+        args_many += 1;
+    }
+
+    size_t arg_size = sizeof(char *) * (args_many + 1);
+    char ** arg_kern = kmalloc(arg_size);
+
+    for (int i = 0; i < args_many + 1; ++i) {
+        if (i == args_many) {
+            arg_kern[i] = NULL;
+            continue;
+        }
+        size_t argument_size = sizeof(char) * (strlen(args[i] + 1));
+        arg_kern[i] = kmalloc(argument_size);
+        copyin((const_userptr_t) args[i], (void *) args_kern[i], argument_size);
+    }
 
     // Copy the program path into the kernel
     size_t progname_size = sizeof(char) * (strlen(progname) + 1);
