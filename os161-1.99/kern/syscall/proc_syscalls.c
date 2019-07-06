@@ -215,6 +215,7 @@ sys_execv(char *progname, char **args) {
     int result;
 
     // Count the number of arguments
+    (void)args;
 
     // Copy the program path into the kernel
     size_t progname_size = sizeof(char) * (strlen(progname) + 1);
