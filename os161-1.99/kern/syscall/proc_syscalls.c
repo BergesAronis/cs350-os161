@@ -296,7 +296,7 @@ sys_execv(char *progname, char **args) {
     }
 
     // Delete old adress space
-    as_destroy(elder)
+    as_destroy(elder);
 
 
 
