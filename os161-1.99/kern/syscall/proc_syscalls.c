@@ -282,7 +282,7 @@ sys_execv(char *progname, char **args) {
     vaddr_t new_stack = stackptr;
 
     for (int i = (args_many - 1); i >= 0; --i) {
-        size_t new_arg_len = strlen(arg_kern[i]) + 1;
+        size_t new_arg_len = ROUNDUP(strlen(arg_kern[i]) + 1, 8);
         size_t new_arg_size = sizeof(char) * new_arg_len;
         new_stack -= new_arg_size;
         copyout((void *) arg_kern[i], (userptr_t) new_stack, new_arg_len);

@@ -10,6 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86ab5008-c651-451d-84bd-84637bb56b5c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c" beforeDir="false" afterPath="$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,8 +41,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="291" selection-start-line="291" selection-end-line="296" />
+            <state relative-caret-position="182">
+              <caret line="284" column="63" selection-start-line="284" selection-start-column="63" selection-end-line="284" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -216,28 +217,7 @@
       <workItem from="1561647389664" duration="9851000" />
       <workItem from="1561663344484" duration="138000" />
       <workItem from="1561737875004" duration="494000" />
-      <workItem from="1562429981746" duration="10757000" />
-    </task>
-    <task id="LOCAL-00072" summary="k">
-      <created>1561577057900</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1561577057900</updated>
-    </task>
-    <task id="LOCAL-00073" summary="k">
-      <created>1561577716452</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1561577716452</updated>
-    </task>
-    <task id="LOCAL-00074" summary="k">
-      <created>1561577861794</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1561577861795</updated>
+      <workItem from="1562429981746" duration="12663000" />
     </task>
     <task id="LOCAL-00075" summary="k">
       <created>1561580558986</created>
@@ -561,11 +541,32 @@
       <option name="project" value="LOCAL" />
       <updated>1562603960632</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="a big attempt">
+      <created>1562604170306</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1562604170306</updated>
+    </task>
+    <task id="LOCAL-00122" summary="a big attempt">
+      <created>1562604217765</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1562604217766</updated>
+    </task>
+    <task id="LOCAL-00123" summary="a big attempt">
+      <created>1562604799195</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1562604799196</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90084000" />
+    <option name="totallyTimeSpent" value="91990000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -597,7 +598,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.3298969" />
-      <window_info active="true" anchor="right" x="461" y="59" width="579" height="883" id="Terminal" order="4" visible="true" weight="0.42474228" />
+      <window_info anchor="right" x="461" y="59" width="579" height="883" id="Terminal" order="4" weight="0.42474228" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" weight="0.33676976" />
@@ -617,7 +618,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.3298969" />
-      <window_info active="true" anchor="right" x="461" y="59" width="579" height="883" id="Terminal" order="4" visible="true" weight="0.8307255" />
+      <window_info active="true" anchor="right" x="461" y="59" width="579" height="883" id="Terminal" order="4" visible="true" weight="0.42474228" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -815,8 +816,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="291" selection-start-line="291" selection-end-line="296" />
+        <state relative-caret-position="182">
+          <caret line="284" column="63" selection-start-line="284" selection-start-column="63" selection-end-line="284" selection-end-column="63" />
         </state>
       </provider>
     </entry>
