@@ -285,14 +285,14 @@ sys_execv(char *progname, char **args) {
         size_t new_arg_len = ROUNDUP(strlen(arg_kern[i]) + 1, 8);
         size_t new_arg_size = sizeof(char) * new_arg_len;
         new_stack -= new_arg_size;
-        copyoutstr((void *) arg_kern[i], (userptr_t) new_stack, new_arg_len);
+        copyoutstr((void *) arg_kern[i], (userptr_t) new_stack, new_arg_len, new_arg_size);
         new_arguments[i] = new_stack;
     }
 
     for (int i = args_many; i >= 0; --i) {
         size_t ptr_size = sizeof(vaddr_t);
         new_stack -= ptr_size;
-        copyoutstr((void *) &new_arguments[i], (userptr_t) new_stack, ptr_size);
+        copyout((void *) &new_arguments[i], (userptr_t) new_stack, ptr_size);
     }
 
     // Delete old address space
