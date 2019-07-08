@@ -253,7 +253,7 @@ sys_execv(char *progname, char **args) {
     }
 
     /* Switch to it and activate it. */
-    curproc_setas(as);
+    struct addrspace * elder = curproc_setas(as);
     as_activate();
 
     /* Load the executable. */
@@ -275,13 +275,34 @@ sys_execv(char *progname, char **args) {
     }
 
 
+    // Copy some arguments
+    vaddr_t new_stack = stackptr;
 
+    vaddr_t *new_arguments = kmalloc(sizeof(vaddr_t) * (args_many + 1));
+    new_arguments[args_many] = (vaddr_t) NULL;
+
+    for (int i = args_many - 1; i >= 0; --i) {
+        size_t new_arg_len = ROUNDUP(strlen(arg_kern[i]) + 1, 4);
+        size_t new_arg_size = sizeof(char) * new_arg_len;
+        new_stack -= new_arg_size;
+        copyout((void *) arg_kern[i], (userptr_t) new_stack, new_arg_len)
+        new_arguments[i] = new_stack;
+    }
+
+    for (int i = args_many; i >= 0 --i) {
+        size_t ptr_size = sizeof(vaddr_t);
+        new_stack -= ptr_size;
+        copyout((void *) &new_arguments[i], (userptr_t) new_stack, ptr_size);
+    }
+
+    // Delete old adress space
+    as_destroy(elder)
 
 
 
     /* Warp to user mode. */
-    enter_new_process(0 /*argc*/, NULL /*userspace addr of argv*/,
-                      stackptr, entrypoint);
+    enter_new_process(args_many/*argc*/, (userptr_t) new_stack /*userspace addr of argv*/,
+                      ROUNDUP(new_stack, 8), entrypoint);
 
     /* enter_new_process does not return. */
     panic("enter_new_process returned\n");
