@@ -276,10 +276,10 @@ sys_execv(char *progname, char **args) {
 
 
     // Copy some arguments
-    vaddr_t new_stack = stackptr;
-
     vaddr_t *new_arguments = kmalloc(sizeof(vaddr_t) * (args_many + 1));
     new_arguments[args_many] = (vaddr_t) NULL;
+
+    vaddr_t new_stack = stackptr;
 
     for (int i = (args_many - 1); i >= 0; --i) {
         size_t new_arg_len = ROUNDUP(strlen(arg_kern[i]) + 1, 4);
@@ -297,8 +297,10 @@ sys_execv(char *progname, char **args) {
 
     // Delete old adress space
     as_destroy(elder);
-
-
+    kfree(progname_kern);
+    for (int i = 0; i < args_many + 1; ++i) {
+        kfree(arg_kern[i]);
+    }
 
     /* Warp to user mode. */
     enter_new_process(args_many/*argc*/, (userptr_t) new_stack /*userspace addr of argv*/,

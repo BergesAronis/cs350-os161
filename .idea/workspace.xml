@@ -41,8 +41,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="303" column="36" lean-forward="true" selection-start-line="303" selection-start-column="36" selection-end-line="303" selection-end-column="36" />
+            <state relative-caret-position="318">
+              <caret line="277" column="26" selection-start-line="277" selection-start-column="26" selection-end-line="277" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -217,28 +217,7 @@
       <workItem from="1561647389664" duration="9851000" />
       <workItem from="1561663344484" duration="138000" />
       <workItem from="1561737875004" duration="494000" />
-      <workItem from="1562429981746" duration="10064000" />
-    </task>
-    <task id="LOCAL-00068" summary="k">
-      <created>1561573106428</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1561573106428</updated>
-    </task>
-    <task id="LOCAL-00069" summary="k">
-      <created>1561576918046</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1561576918046</updated>
-    </task>
-    <task id="LOCAL-00070" summary="k">
-      <created>1561576995740</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1561576995740</updated>
+      <workItem from="1562429981746" duration="10453000" />
     </task>
     <task id="LOCAL-00071" summary="k">
       <created>1561577028586</created>
@@ -562,11 +541,32 @@
       <option name="project" value="LOCAL" />
       <updated>1562435549728</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="a big attempt">
+      <created>1562603489592</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1562603489592</updated>
+    </task>
+    <task id="LOCAL-00118" summary="a big attempt">
+      <created>1562603580374</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1562603580375</updated>
+    </task>
+    <task id="LOCAL-00119" summary="a big attempt">
+      <created>1562603590478</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1562603590478</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89391000" />
+    <option name="totallyTimeSpent" value="89780000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -598,7 +598,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.3298969" />
-      <window_info anchor="right" x="461" y="59" width="579" height="883" id="Terminal" order="4" weight="0.39793813" />
+      <window_info anchor="right" x="461" y="59" width="579" height="883" id="Terminal" order="4" weight="0.8307255" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" weight="0.33676976" />
@@ -618,7 +618,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.3298969" />
-      <window_info active="true" anchor="right" x="461" y="59" width="579" height="883" id="Terminal" order="4" visible="true" weight="0.39793813" />
+      <window_info active="true" anchor="right" x="461" y="59" width="579" height="883" id="Terminal" order="4" visible="true" weight="0.8307255" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -634,7 +634,8 @@
     <MESSAGE value="Final fix" />
     <MESSAGE value="a2b first try" />
     <MESSAGE value="k" />
-    <option name="LAST_COMMIT_MESSAGE" value="k" />
+    <MESSAGE value="a big attempt" />
+    <option name="LAST_COMMIT_MESSAGE" value="a big attempt" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/submitlog.txt">
@@ -815,8 +816,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="303" column="36" lean-forward="true" selection-start-line="303" selection-start-column="36" selection-end-line="303" selection-end-column="36" />
+        <state relative-caret-position="318">
+          <caret line="277" column="26" selection-start-line="277" selection-start-column="26" selection-end-line="277" selection-end-column="26" />
         </state>
       </provider>
     </entry>
