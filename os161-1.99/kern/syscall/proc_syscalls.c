@@ -276,6 +276,10 @@ sys_execv(char *progname, char **args) {
     // Copy some arguments
     vaddr_t *new_arguments = kmalloc(sizeof(vaddr_t) * (args_many + 1));
     new_arguments[args_many] = (vaddr_t) NULL;
+    size_t ptr_size = sizeof(vaddr_t);
+    new_stack -= ptr_size;
+    copyout((void *) &new_arguments[args_many], (userptr_t) new_stack, ptr_size);
+    new_stack += ptr_size;
 
     vaddr_t new_stack = stackptr;
 
@@ -289,6 +293,9 @@ sys_execv(char *progname, char **args) {
         new_stack -= ptr_size;
         copyout((void *) &new_arguments[i], (userptr_t) new_stack, ptr_size);
         new_stack += ptr_size;
+    }
+
+    for (int i = args_many; i >= 0; --i) {
     }
 
     // Delete old address space
