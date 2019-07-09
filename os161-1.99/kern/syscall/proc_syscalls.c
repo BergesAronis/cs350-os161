@@ -228,7 +228,7 @@ sys_execv(char *progname, char **args) {
             arg_kern[i] = NULL;
             continue;
         }
-        size_t argument_size = sizeof(char) * (strlen(args[i] + 1));
+        size_t argument_size = sizeof(char) * (strlen(args[i]) + 1));
         arg_kern[i] = kmalloc(argument_size);
         copyin((const_userptr_t) args[i], (void *) arg_kern[i], argument_size);
     }
