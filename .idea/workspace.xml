@@ -41,17 +41,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="227" column="33" selection-start-line="227" selection-start-column="33" selection-end-line="227" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/os161-1.99/kern/vm/copyinout.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="298" selection-start-line="298" selection-end-line="298" />
+            <state relative-caret-position="539">
+              <caret line="293" column="5" lean-forward="true" selection-start-line="293" selection-start-column="5" selection-end-line="293" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -90,7 +81,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>fork()</find>
       <find>I don</find>
       <find>proc_create_runpr</find>
       <find>ENOMEM</find>
@@ -120,6 +110,7 @@
       <find>sys_fork</find>
       <find>copyinout</find>
       <find>copyoutstr</find>
+      <find>userptr_t</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\pipli\Documents\CS 350\cs350-os161\os161-1.99\user</dir>
@@ -228,21 +219,7 @@
       <workItem from="1561647389664" duration="9851000" />
       <workItem from="1561663344484" duration="138000" />
       <workItem from="1561737875004" duration="494000" />
-      <workItem from="1562429981746" duration="15794000" />
-    </task>
-    <task id="LOCAL-00085" summary="k">
-      <created>1561583818184</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1561583818184</updated>
-    </task>
-    <task id="LOCAL-00086" summary="k">
-      <created>1561583886943</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1561583886943</updated>
+      <workItem from="1562429981746" duration="16772000" />
     </task>
     <task id="LOCAL-00087" summary="k">
       <created>1561584843911</created>
@@ -573,11 +550,25 @@
       <option name="project" value="LOCAL" />
       <updated>1562695329430</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="a big attempt">
+      <created>1562695365683</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1562695365683</updated>
+    </task>
+    <task id="LOCAL-00135" summary="a big attempt">
+      <created>1562696294537</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1562696294537</updated>
+    </task>
+    <option name="localTasksCounter" value="136" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95121000" />
+    <option name="totallyTimeSpent" value="96099000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -827,15 +818,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/os161-1.99/kern/vm/copyinout.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="298" selection-start-line="298" selection-end-line="298" />
+        <state relative-caret-position="269">
+          <caret line="152" column="13" selection-start-line="152" selection-start-column="13" selection-end-line="152" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="227" column="33" selection-start-line="227" selection-start-column="33" selection-end-line="227" selection-end-column="33" />
+        <state relative-caret-position="539">
+          <caret line="293" column="5" lean-forward="true" selection-start-line="293" selection-start-column="5" selection-end-line="293" selection-end-column="5" />
         </state>
       </provider>
     </entry>
