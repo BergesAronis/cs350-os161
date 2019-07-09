@@ -279,27 +279,19 @@ sys_execv(char *progname, char **args) {
 
     vaddr_t new_stack = stackptr;
 
-    size_t ptr_size = sizeof(vaddr_t);
-    new_stack -= ptr_size;
-    copyout((void *) &new_arguments[args_many], (userptr_t) new_stack, ptr_size);
-
     for (int i = (args_many - 1); i >= 0; --i) {
         size_t new_arg_len = ROUNDUP(strlen(arg_kern[i]) + 1, 8);
         size_t new_arg_size = sizeof(char) * new_arg_len;
         new_stack -= new_arg_size;
         copyoutstr((void *) arg_kern[i], (userptr_t) new_stack, new_arg_len, (size_t *) new_arg_size);
         new_arguments[i] = new_stack;
-
-        size_t ptr_size = sizeof(vaddr_t);
-        new_stack -= ptr_size;
-        copyoutstr((void *) &new_arguments[i], (userptr_t) new_stack, ptr_size);
     }
 
-//    for (int i = args_many; i >= 0; --i) {
-//        size_t ptr_size = sizeof(vaddr_t);
-//        new_stack -= ptr_size;
-//        copyout((void *) &new_arguments[i], (userptr_t) new_stack, ptr_size);
-//    }
+    for (int i = args_many; i >= 0; --i) {
+        size_t ptr_size = sizeof(vaddr_t);
+        new_stack -= ptr_size;
+        copyout((void *) &new_arguments[i], (userptr_t) new_stack, ptr_size);
+    }
 
     // Delete old address space
     as_destroy(elder);
