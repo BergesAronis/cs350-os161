@@ -292,7 +292,7 @@ sys_execv(char *progname, char **args) {
 
         size_t ptr_size = sizeof(vaddr_t);
         new_stack -= ptr_size;
-        copyout((void *) &new_arguments[i], (userptr_t) new_stack, ptr_size);
+        copyoutstr((void *) &new_arguments[i], (userptr_t) new_stack, ptr_size);
     }
 
 //    for (int i = args_many; i >= 0; --i) {
