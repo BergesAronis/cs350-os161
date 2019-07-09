@@ -277,11 +277,10 @@ sys_execv(char *progname, char **args) {
     vaddr_t *new_arguments = kmalloc(sizeof(vaddr_t) * (args_many + 1));
     new_arguments[args_many] = (vaddr_t) NULL;
     size_t ptr_size = sizeof(vaddr_t);
+    vaddr_t new_stack = stackptr;
     new_stack -= ptr_size;
     copyout((void *) &new_arguments[args_many], (userptr_t) new_stack, ptr_size);
     new_stack += ptr_size;
-
-    vaddr_t new_stack = stackptr;
 
     for (int i = (args_many - 1); i >= 0; --i) {
         size_t new_arg_len = ROUNDUP(strlen(arg_kern[i]) + 1, 8);
