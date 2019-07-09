@@ -225,7 +225,7 @@ sys_execv(char *progname, char **args) {
 
     arg_kern[args_many] = NULL;
 
-    int arg_i = 0
+    int arg_i = 0;
     while (arg_i < args_many) {
         size_t argument_size = sizeof(char) * (strlen(args[arg_i]) + 1);
         arg_kern[arg_i] = kmalloc(argument_size);
