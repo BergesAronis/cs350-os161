@@ -223,11 +223,9 @@ sys_execv(char *progname, char **args) {
     size_t arg_size = sizeof(char *) * (args_many + 1);
     char ** arg_kern = kmalloc(arg_size);
 
+    arg_kern[args_many] = NULL;
+
     for (int i = 0; i < args_many + 1; ++i) {
-        if (i == args_many) {
-            arg_kern[i] = NULL;
-            continue;
-        }
         size_t argument_size = sizeof(char) * (strlen(args[i]) + 1);
         arg_kern[i] = kmalloc(argument_size);
         copyin((const_userptr_t) args[i], (void *) arg_kern[i], argument_size);
