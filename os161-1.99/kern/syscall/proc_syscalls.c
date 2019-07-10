@@ -229,7 +229,7 @@ sys_execv(char *progname, char **args) {
     while (arg_i < args_many) {
         size_t argument_size = sizeof(char) * (strlen(args[arg_i]) + 1);
         arg_kern[arg_i] = kmalloc(argument_size);
-        copyin((const_userptr_t) args[i], (void *) arg_kern[arg_i], argument_size);
+        copyin((const_userptr_t) args[arg_i], (void *) arg_kern[arg_i], argument_size);
         arg_i++;
     }
 
