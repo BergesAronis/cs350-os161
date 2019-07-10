@@ -281,27 +281,35 @@ sys_execv(char *progname, char **args) {
 
     vaddr_t new_stack = stackptr;
 
-    for (int i = (args_many - 1); i >= 0; --i) {
-        size_t new_arg_len = ROUNDUP(strlen(arg_kern[i]) + 1, 8);
-        size_t new_arg_size = sizeof(char) * new_arg_len;
+    int i = (args_many - 1);
+    while (i >= 0) {
+        size_t new_arg_size = sizeof(char) * ROUNDUP(strlen(arg_kern[i]) + 1, 8);
         new_stack -= new_arg_size;
-        copyout((void *) arg_kern[i], (userptr_t) new_stack, new_arg_len);
+        copyout((void *) arg_kern[i],
+                (userptr_t) new_stack,
+                ROUNDUP(strlen(arg_kern[i]) + 1, 8));
         new_arguments[i] = new_stack;
+        i--;
     }
 
-    for (int i = args_many; i >= 0; --i) {
-        size_t ptr_size = sizeof(vaddr_t);
-        new_stack -= ptr_size;
-        copyout((void *) &new_arguments[i], (userptr_t) new_stack, ptr_size);
+    int i = args_many;
+    while (i >= 0) {
+        new_stack -= sizeof(vaddr_t);
+        copyout((void *) &new_arguments[i],
+                (userptr_t) new_stack,
+                sizeof(vaddr_t));
+        i--;
     }
 
     // Delete old address space
-    as_destroy(elder);
-    kfree(progname_kern);
-    for (int i = 0; i < args_many + 1; ++i) {
+    int i = args_many;
+    while (i < args_many + 1) {
         kfree(arg_kern[i]);
+        i++;
     }
     kfree(arg_kern);
+    as_destroy(elder);
+    kfree(progname_kern);
 
     /* Warp to user mode. */
     enter_new_process(args_many/*argc*/, (userptr_t) new_stack /*userspace addr of argv*/,
