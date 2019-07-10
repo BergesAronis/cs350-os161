@@ -281,31 +281,31 @@ sys_execv(char *progname, char **args) {
 
     vaddr_t new_stack = stackptr;
 
-    int i = (args_many - 1);
-    while (i >= 0) {
-        size_t new_arg_size = sizeof(char) * ROUNDUP(strlen(arg_kern[i]) + 1, 8);
+    int new_args_i = (args_many - 1);
+    while (new_args_i >= 0) {
+        size_t new_arg_size = sizeof(char) * ROUNDUP(strlen(arg_kern[new_args_i]) + 1, 8);
         new_stack -= new_arg_size;
-        copyout((void *) arg_kern[i],
+        copyout((void *) arg_kern[new_args_i],
                 (userptr_t) new_stack,
-                ROUNDUP(strlen(arg_kern[i]) + 1, 8));
-        new_arguments[i] = new_stack;
-        i--;
+                ROUNDUP(strlen(arg_kern[new_args_i]) + 1, 8));
+        new_arguments[new_args_i] = new_stack;
+        new_args_i--;
     }
 
-    int i = args_many;
-    while (i >= 0) {
+    int ptr_i = args_many;
+    while (ptr_i >= 0) {
         new_stack -= sizeof(vaddr_t);
-        copyout((void *) &new_arguments[i],
+        copyout((void *) &new_arguments[ptr_i],
                 (userptr_t) new_stack,
                 sizeof(vaddr_t));
-        i--;
+        ptr_i--;
     }
 
     // Delete old address space
-    int i = args_many;
-    while (i < args_many + 1) {
-        kfree(arg_kern[i]);
-        i++;
+    int free_i = args_many;
+    while (free_i < args_many + 1) {
+        kfree(arg_kern[free_i]);
+        free_i++;
     }
     kfree(arg_kern);
     as_destroy(elder);
