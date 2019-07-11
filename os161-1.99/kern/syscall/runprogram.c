@@ -108,11 +108,11 @@ runprogram(char *progname, int args_many, char **args)
     int new_args_i = (args_many - 1);
     while (new_args_i >= 0) {
         int string_length = 1 + strlen(arg_kern[new_args_i]);
-        size_t new_arg_size = sizeof(char) * ROUNDUP(string_length, 8);
+        size_t new_arg_size = sizeof(char) * ROUNDUP(string_length, 4);
         new_stack -= new_arg_size;
         copyout((void *) arg_kern[new_args_i],
                 (userptr_t) new_stack,
-                ROUNDUP(strlen(arg_kern[new_args_i]) + 1, 8));
+                ROUNDUP(strlen(arg_kern[new_args_i]) + 1, 4));
         new_arguments[new_args_i] = new_stack;
         new_args_i--;
     }
