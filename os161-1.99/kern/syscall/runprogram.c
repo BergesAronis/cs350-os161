@@ -126,9 +126,13 @@ runprogram(char *progname, int args_many, char **args)
     }
 
 
+    vaddr_t final_stack = ROUNDUP(new_stack, 8);
+
     /* Warp to user mode. */
-    enter_new_process(args_many/*argc*/, (userptr_t) new_stack /*userspace addr of argv*/,
-                      ROUNDUP(new_stack, 8), entrypoint);
+    enter_new_process(args_many,
+                      (userptr_t) new_stack,
+                      final_stack,
+                      entrypoint);
 
 
     /* enter_new_process does not return. */
