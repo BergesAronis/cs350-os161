@@ -11,6 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="86ab5008-c651-451d-84bd-84637bb56b5c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c" beforeDir="false" afterPath="$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/os161-1.99/kern/syscall/runprogram.c" beforeDir="false" afterPath="$PROJECT_DIR$/os161-1.99/kern/syscall/runprogram.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,11 +39,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
-              <caret line="304" selection-start-line="304" selection-end-line="310" selection-end-column="34" />
+            <state relative-caret-position="553">
+              <caret line="292" column="26" selection-start-line="292" selection-start-column="26" selection-end-line="292" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -68,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/runprogram.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="110" column="45" lean-forward="true" selection-start-line="110" selection-start-column="45" selection-end-line="110" selection-end-column="45" />
+            <state relative-caret-position="369">
+              <caret line="107" selection-start-line="107" selection-end-line="117" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -149,8 +150,8 @@
         <option value="$PROJECT_DIR$/os161-1.99/kern/arch/mips/syscall/syscall.c" />
         <option value="$PROJECT_DIR$/os161-1.99/kern/include/test.h" />
         <option value="$PROJECT_DIR$/os161-1.99/kern/startup/menu.c" />
-        <option value="$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c" />
         <option value="$PROJECT_DIR$/os161-1.99/kern/syscall/runprogram.c" />
+        <option value="$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c" />
       </list>
     </option>
   </component>
@@ -249,21 +250,7 @@
       <workItem from="1561737875004" duration="494000" />
       <workItem from="1562429981746" duration="23334000" />
       <workItem from="1562725474306" duration="623000" />
-      <workItem from="1562858984214" duration="4585000" />
-    </task>
-    <task id="LOCAL-00112" summary="k">
-      <created>1562434170019</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1562434170019</updated>
-    </task>
-    <task id="LOCAL-00113" summary="k">
-      <created>1562434214409</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1562434214409</updated>
+      <workItem from="1562858984214" duration="5898000" />
     </task>
     <task id="LOCAL-00114" summary="k">
       <created>1562434452665</created>
@@ -594,11 +581,25 @@
       <option name="project" value="LOCAL" />
       <updated>1562870183116</updated>
     </task>
-    <option name="localTasksCounter" value="161" />
+    <task id="LOCAL-00161" summary="a big attempt">
+      <created>1562870317174</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1562870317175</updated>
+    </task>
+    <task id="LOCAL-00162" summary="a big attempt">
+      <created>1562870420287</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1562870420287</updated>
+    </task>
+    <option name="localTasksCounter" value="163" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107869000" />
+    <option name="totallyTimeSpent" value="109182000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -860,17 +861,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
+    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/runprogram.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="304" selection-start-line="304" selection-end-line="310" selection-end-column="34" />
+        <state relative-caret-position="369">
+          <caret line="107" selection-start-line="107" selection-end-line="117" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/runprogram.c">
+    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="110" column="45" lean-forward="true" selection-start-line="110" selection-start-column="45" selection-end-line="110" selection-end-column="45" />
+        <state relative-caret-position="553">
+          <caret line="292" column="26" selection-start-line="292" selection-start-column="26" selection-end-line="292" selection-end-column="26" />
         </state>
       </provider>
     </entry>
