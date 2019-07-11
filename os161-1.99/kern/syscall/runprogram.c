@@ -32,7 +32,7 @@
  * reference when implementing the execv() system call. Remember though
  * that execv() needs to do more than this function does.
  */
-#include <copyinout.h>
+
 #include <types.h>
 #include <kern/errno.h>
 #include <kern/fcntl.h>
@@ -44,6 +44,7 @@
 #include <vfs.h>
 #include <syscall.h>
 #include <test.h>
+#include <copyinout.h>
 
 /*
  * Load program "progname" and start running it in usermode.
@@ -100,7 +101,7 @@ runprogram(char *progname, int args_many, char **args)
     // Copy some arguments
     vaddr_t *new_arguments = kmalloc(sizeof(vaddr_t) * (args_many + 1));
     new_arguments[args_many] = (vaddr_t) NULL;
-    cahr **args_kern = args;
+    char **arg_kern = args;
 
     vaddr_t new_stack = stackptr;
 
