@@ -308,7 +308,7 @@ sys_execv(char *progname, char **args) {
 //        free_i++;
 //    }
 //    kfree(arg_kern);
-//    as_destroy(elder);
+    as_destroy(elder);
 //    kfree(progname_kern);
 
     /* Warp to user mode. */
