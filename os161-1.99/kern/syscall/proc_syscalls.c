@@ -253,7 +253,7 @@ sys_execv(char *progname, char **args) {
     }
 
     /* Switch to it and activate it. */
-    struct addrspace * elder = curproc_setas(as);
+    curproc_setas(as);
     as_activate();
 
     /* Load the executable. */
