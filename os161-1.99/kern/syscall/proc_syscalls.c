@@ -301,15 +301,6 @@ sys_execv(char *progname, char **args) {
         ptr_i--;
     }
 
-//    // Delete old address space
-//    int free_i = args_many;
-//    while (free_i < args_many + 1) {
-//        kfree(arg_kern[free_i]);
-//        free_i++;
-//    }
-//    kfree(arg_kern);
-    as_destroy(elder);
-//    kfree(progname_kern);
 
     /* Warp to user mode. */
     enter_new_process(args_many/*argc*/, (userptr_t) new_stack /*userspace addr of argv*/,

@@ -52,7 +52,7 @@
  * Calls vfs_open on progname and thus may destroy it.
  */
 int
-runprogram(char *progname)
+runprogram(char *progname, int args_many, char **args)
 {
 	struct addrspace *as;
 	struct vnode *v;
@@ -97,11 +97,39 @@ runprogram(char *progname)
 		return result;
 	}
 
-	/* Warp to user mode. */
-	enter_new_process(0 /*argc*/, NULL /*userspace addr of argv*/,
-			  stackptr, entrypoint);
-	
-	/* enter_new_process does not return. */
+    // Copy some arguments
+    vaddr_t *new_arguments = kmalloc(sizeof(vaddr_t) * (args_many + 1));
+    new_arguments[args_many] = (vaddr_t) NULL;
+
+    vaddr_t new_stack = stackptr;
+
+    int new_args_i = (args_many - 1);
+    while (new_args_i >= 0) {
+        size_t new_arg_size = sizeof(char) * ROUNDUP(strlen(arg_kern[new_args_i]) + 1, 8);
+        new_stack -= new_arg_size;
+        copyout((void *) arg_kern[new_args_i],
+                (userptr_t) new_stack,
+                ROUNDUP(strlen(arg_kern[new_args_i]) + 1, 8));
+        new_arguments[new_args_i] = new_stack;
+        new_args_i--;
+    }
+
+    int ptr_i = args_many;
+    while (ptr_i >= 0) {
+        new_stack -= sizeof(vaddr_t);
+        copyout((void *) &new_arguments[ptr_i],
+                (userptr_t) new_stack,
+                sizeof(vaddr_t));
+        ptr_i--;
+    }
+
+
+    /* Warp to user mode. */
+    enter_new_process(args_many/*argc*/, (userptr_t) new_stack /*userspace addr of argv*/,
+                      ROUNDUP(new_stack, 8), entrypoint);
+
+
+    /* enter_new_process does not return. */
 	panic("enter_new_process returned\n");
 	return EINVAL;
 }
