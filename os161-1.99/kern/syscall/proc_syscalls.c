@@ -288,7 +288,7 @@ sys_execv(char *progname, char **args) {
         new_stack -= new_arg_size;
         copyout((void *) arg_kern[new_args_i],
                 (userptr_t) new_stack,
-                ROUNDUP(strlen(arg_kern[new_args_i]) + 1, 8));
+                ROUNDUP(string_length, 8));
         new_arguments[new_args_i] = new_stack;
         new_args_i--;
     }
