@@ -11,8 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="86ab5008-c651-451d-84bd-84637bb56b5c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c" beforeDir="false" afterPath="$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/os161-1.99/kern/syscall/runprogram.c" beforeDir="false" afterPath="$PROJECT_DIR$/os161-1.99/kern/syscall/runprogram.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/os161-1.99/kern/arch/mips/vm/dumbvm.c" beforeDir="false" afterPath="$PROJECT_DIR$/os161-1.99/kern/arch/mips/vm/dumbvm.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,58 +39,17 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
+        <entry file="file://$PROJECT_DIR$/os161-1.99/kern/include/vm.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="290" column="37" selection-start-line="290" selection-start-column="37" selection-end-line="290" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/os161-1.99/kern/include/syscall.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1156">
-              <caret line="68" column="41" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/os161-1.99/kern/arch/mips/syscall/syscall.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2431">
-              <caret line="143" column="46" selection-start-line="143" selection-start-column="46" selection-end-line="143" selection-end-column="46" />
-              <folding>
-                <element signature="e#4218#4908#0" expanded="true" />
-              </folding>
-            </state>
+            <state relative-caret-position="-365" />
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/runprogram.c">
+        <entry file="file://$PROJECT_DIR$/os161-1.99/kern/arch/mips/vm/dumbvm.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
-              <caret line="114" column="37" selection-start-line="114" selection-start-column="37" selection-end-line="114" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/os161-1.99/kern/include/test.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1428">
-              <caret line="84" column="4" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/os161-1.99/kern/startup/menu.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1598">
-              <caret line="94" selection-start-line="94" selection-end-line="94" />
+            <state relative-caret-position="578">
+              <caret line="220" lean-forward="true" selection-start-line="220" selection-end-line="220" />
             </state>
           </provider>
         </entry>
@@ -152,6 +110,7 @@
         <option value="$PROJECT_DIR$/os161-1.99/kern/startup/menu.c" />
         <option value="$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c" />
         <option value="$PROJECT_DIR$/os161-1.99/kern/syscall/runprogram.c" />
+        <option value="$PROJECT_DIR$/os161-1.99/kern/arch/mips/vm/dumbvm.c" />
       </list>
     </option>
   </component>
@@ -166,8 +125,8 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1490" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
     <option name="width" value="1522" />
     <option name="height" value="2012" />
   </component>
@@ -199,14 +158,24 @@
               <item name="cs350-os161" type="462c0819:PsiDirectoryNode" />
               <item name="os161-1.99" type="462c0819:PsiDirectoryNode" />
               <item name="kern" type="462c0819:PsiDirectoryNode" />
-              <item name="include" type="462c0819:PsiDirectoryNode" />
+              <item name="arch" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cs350-os161" type="b2602c69:ProjectViewProjectNode" />
               <item name="cs350-os161" type="462c0819:PsiDirectoryNode" />
               <item name="os161-1.99" type="462c0819:PsiDirectoryNode" />
               <item name="kern" type="462c0819:PsiDirectoryNode" />
-              <item name="startup" type="462c0819:PsiDirectoryNode" />
+              <item name="arch" type="462c0819:PsiDirectoryNode" />
+              <item name="mips" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cs350-os161" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cs350-os161" type="462c0819:PsiDirectoryNode" />
+              <item name="os161-1.99" type="462c0819:PsiDirectoryNode" />
+              <item name="kern" type="462c0819:PsiDirectoryNode" />
+              <item name="arch" type="462c0819:PsiDirectoryNode" />
+              <item name="mips" type="462c0819:PsiDirectoryNode" />
+              <item name="vm" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -250,14 +219,8 @@
       <workItem from="1562429981746" duration="23334000" />
       <workItem from="1562725474306" duration="623000" />
       <workItem from="1562858984214" duration="7509000" />
-      <workItem from="1562952204066" duration="242000" />
-    </task>
-    <task id="LOCAL-00117" summary="a big attempt">
-      <created>1562603489592</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1562603489592</updated>
+      <workItem from="1562952204066" duration="444000" />
+      <workItem from="1564334254002" duration="1660000" />
     </task>
     <task id="LOCAL-00118" summary="a big attempt">
       <created>1562603580374</created>
@@ -595,11 +558,18 @@
       <option name="project" value="LOCAL" />
       <updated>1562871933431</updated>
     </task>
-    <option name="localTasksCounter" value="166" />
+    <task id="LOCAL-00166" summary="a big attempt">
+      <created>1562952479673</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1562952479673</updated>
+    </task>
+    <option name="localTasksCounter" value="167" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111035000" />
+    <option name="totallyTimeSpent" value="112897000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -611,10 +581,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="745" y="0" width="761" height="1006" extended-state="0" />
+    <frame x="-5" y="0" width="761" height="1006" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.33676976" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.16907217" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -631,7 +601,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.3298969" />
-      <window_info anchor="right" x="461" y="59" width="579" height="883" id="Terminal" order="4" weight="0.50446737" />
+      <window_info anchor="right" x="461" y="59" width="579" height="883" id="Terminal" order="4" weight="0.70697016" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" weight="0.33676976" />
@@ -707,13 +677,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
           <caret line="142" column="4" selection-start-line="142" selection-start-column="4" selection-end-line="142" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/arch/mips/vm/dumbvm.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-69">
-          <caret line="354" selection-start-line="354" selection-end-line="354" />
         </state>
       </provider>
     </entry>
@@ -832,7 +795,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
+        <state relative-caret-position="4930">
           <caret line="290" column="37" selection-start-line="290" selection-start-column="37" selection-end-line="290" selection-end-column="37" />
         </state>
       </provider>
@@ -870,8 +833,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/os161-1.99/kern/syscall/runprogram.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
+        <state relative-caret-position="590">
           <caret line="114" column="37" selection-start-line="114" selection-start-column="37" selection-end-line="114" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/include/vm.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-365" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/arch/mips/vm/dumbvm.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="220" lean-forward="true" selection-start-line="220" selection-end-line="220" />
         </state>
       </provider>
     </entry>
