@@ -169,7 +169,7 @@ vm_fault(int faulttype, vaddr_t faultaddress)
 	stacktop = USERSTACK;
 
 	bool read_only = false;
-	bool elfloaded = as->loadelf_complete;
+	bool elfloaded = as->elfloaded;
 
 	if (faultaddress >= vbase1 && faultaddress < vtop1) {
 		paddr = (faultaddress - vbase1) + as->as_pbase1;
@@ -210,11 +210,11 @@ vm_fault(int faulttype, vaddr_t faultaddress)
 	}
 
 	ehi = faultaddress;
-	elo = paddr | TLBO_DIRTY | TLBO_VALID;
+	elo = paddr | TLBlO_DIRTY | TLBLO_VALID;
 	if (elfloaded && read_only) {
 	    elo &= ~TLBLO_DIRTY;
 	}
-	tlb_random(egi, elo);
+	tlb_random(ehi, elo);
 	splx(spl);
 	return 0;
 }
@@ -234,6 +234,7 @@ as_create(void)
 	as->as_pbase2 = 0;
 	as->as_npages2 = 0;
 	as->as_stackpbase = 0;
+	as->elfloaded = false;
 
 	return as;
 }
