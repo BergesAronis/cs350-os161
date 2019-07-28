@@ -48,8 +48,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/os161-1.99/kern/arch/mips/vm/dumbvm.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="220" lean-forward="true" selection-start-line="220" selection-end-line="220" />
+            <state relative-caret-position="327">
+              <caret line="216" column="25" lean-forward="true" selection-start-line="216" selection-start-column="25" selection-end-line="216" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/os161-1.99/kern/include/addrspace.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="556">
+              <caret line="57" column="17" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -58,12 +67,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>as_ac</find>
-      <find>enter_fo</find>
-      <find>thread_fork(</find>
-      <find>enter_fork</find>
-      <find>thread_fo</find>
-      <find>setas</find>
       <find>as_cop</find>
       <find>as_copy</find>
       <find>coun</find>
@@ -88,6 +91,12 @@
       <find>runprogram</find>
       <find>argument passing</find>
       <find>runpr</find>
+      <find>as</find>
+      <find>load</find>
+      <find>loadelf</find>
+      <find>as_vbase1</find>
+      <find>as_cre</find>
+      <find>tlbl</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\pipli\Documents\CS 350\cs350-os161\os161-1.99\user</dir>
@@ -110,6 +119,7 @@
         <option value="$PROJECT_DIR$/os161-1.99/kern/startup/menu.c" />
         <option value="$PROJECT_DIR$/os161-1.99/kern/syscall/proc_syscalls.c" />
         <option value="$PROJECT_DIR$/os161-1.99/kern/syscall/runprogram.c" />
+        <option value="$PROJECT_DIR$/os161-1.99/kern/include/addrspace.h" />
         <option value="$PROJECT_DIR$/os161-1.99/kern/arch/mips/vm/dumbvm.c" />
       </list>
     </option>
@@ -165,17 +175,7 @@
               <item name="cs350-os161" type="462c0819:PsiDirectoryNode" />
               <item name="os161-1.99" type="462c0819:PsiDirectoryNode" />
               <item name="kern" type="462c0819:PsiDirectoryNode" />
-              <item name="arch" type="462c0819:PsiDirectoryNode" />
-              <item name="mips" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cs350-os161" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cs350-os161" type="462c0819:PsiDirectoryNode" />
-              <item name="os161-1.99" type="462c0819:PsiDirectoryNode" />
-              <item name="kern" type="462c0819:PsiDirectoryNode" />
-              <item name="arch" type="462c0819:PsiDirectoryNode" />
-              <item name="mips" type="462c0819:PsiDirectoryNode" />
-              <item name="vm" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -220,21 +220,7 @@
       <workItem from="1562725474306" duration="623000" />
       <workItem from="1562858984214" duration="7509000" />
       <workItem from="1562952204066" duration="444000" />
-      <workItem from="1564334254002" duration="1660000" />
-    </task>
-    <task id="LOCAL-00118" summary="a big attempt">
-      <created>1562603580374</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1562603580375</updated>
-    </task>
-    <task id="LOCAL-00119" summary="a big attempt">
-      <created>1562603590478</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1562603590478</updated>
+      <workItem from="1564334254002" duration="3096000" />
     </task>
     <task id="LOCAL-00120" summary="a big attempt">
       <created>1562603960632</created>
@@ -565,11 +551,25 @@
       <option name="project" value="LOCAL" />
       <updated>1562952479673</updated>
     </task>
-    <option name="localTasksCounter" value="167" />
+    <task id="LOCAL-00167" summary="tlb">
+      <created>1564335959006</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1564335959007</updated>
+    </task>
+    <task id="LOCAL-00168" summary="tlb">
+      <created>1564337490914</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1564337490914</updated>
+    </task>
+    <option name="localTasksCounter" value="169" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112897000" />
+    <option name="totallyTimeSpent" value="114333000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -581,10 +581,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-5" y="0" width="761" height="1006" extended-state="0" />
+    <frame x="-6" y="-6" width="1513" height="1013" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.16907217" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16907217" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -601,7 +601,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.3298969" />
-      <window_info anchor="right" x="461" y="59" width="579" height="883" id="Terminal" order="4" weight="0.70697016" />
+      <window_info active="true" anchor="right" x="461" y="59" width="579" height="883" id="Terminal" order="4" visible="true" weight="0.3718213" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" weight="0.33676976" />
@@ -638,7 +638,8 @@
     <MESSAGE value="a2b first try" />
     <MESSAGE value="k" />
     <MESSAGE value="a big attempt" />
-    <option name="LAST_COMMIT_MESSAGE" value="a big attempt" />
+    <MESSAGE value="tlb" />
+    <option name="LAST_COMMIT_MESSAGE" value="tlb" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/submitlog.txt">
@@ -843,10 +844,17 @@
         <state relative-caret-position="-365" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/os161-1.99/kern/include/addrspace.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556">
+          <caret line="57" column="17" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/os161-1.99/kern/arch/mips/vm/dumbvm.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="220" lean-forward="true" selection-start-line="220" selection-end-line="220" />
+        <state relative-caret-position="327">
+          <caret line="216" column="25" lean-forward="true" selection-start-line="216" selection-start-column="25" selection-end-line="216" selection-end-column="25" />
         </state>
       </provider>
     </entry>

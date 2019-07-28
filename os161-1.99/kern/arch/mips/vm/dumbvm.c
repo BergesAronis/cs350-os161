@@ -210,7 +210,7 @@ vm_fault(int faulttype, vaddr_t faultaddress)
 	}
 
 	ehi = faultaddress;
-	elo = paddr | TLBlO_DIRTY | TLBLO_VALID;
+	elo = paddr | TLBLO_DIRTY | TLBLO_VALID;
 	if (elfloaded && read_only) {
 	    elo &= ~TLBLO_DIRTY;
 	}
